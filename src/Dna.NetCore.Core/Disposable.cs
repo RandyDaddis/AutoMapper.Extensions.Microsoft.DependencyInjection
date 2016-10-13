@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NetCore.Core
+namespace Dna.NetCore.Core
 {
     public class Disposable : IDisposable
     {

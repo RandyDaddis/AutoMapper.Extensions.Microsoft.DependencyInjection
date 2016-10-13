@@ -2,7 +2,7 @@
 using Autofac;
 using System.Reflection;
 
-namespace NetCore.Core
+namespace Dna.NetCore.Core
 {
     public class AutofacModule_Core : Autofac.Module
     {

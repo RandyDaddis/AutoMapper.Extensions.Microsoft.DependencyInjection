@@ -4,6 +4,7 @@ using AspNetCore.NetCore.WebApp.Services;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
+using Dna.NetCore.Core.BLL.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -11,11 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using NetCore.Core;
-using Dna.NetCore.Core.BLL.Mappers;
-using Dna.NetCore.Core.BLL.Repositories;
-using Dna.NetCore.Core.DAL.EFCore;
-using Dna.NetCore.Core.DAL.EFCore.Repositories;
 using System;
 
 namespace AspNetCore.NetCore.WebApp

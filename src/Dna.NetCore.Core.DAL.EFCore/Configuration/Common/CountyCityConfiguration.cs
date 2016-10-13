@@ -1,5 +1,5 @@
 ﻿using Dna.NetCore.Core.BLL.Entities.Common;
-using Dna.NetCore.Core.DAL.EFCore.Temp.Cocowalla;
+using Dna.NetCore.Core.DAL.EFCore.Configuration.Temporary;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Configuration.Common
@@ -10,8 +10,6 @@ namespace Dna.NetCore.Core.DAL.EFCore.Configuration.Common
         {
             //// Table and Schema Names
             //ToTable("Core_CountyCity", "dbo");
-
-            //Property(a => a.id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             // EF Core
             builder.HasOne(pt => pt.County)

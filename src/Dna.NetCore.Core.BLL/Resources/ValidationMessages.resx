@@ -1,122 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
+	<!-- 
+		Microsoft ResX Schema
 
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+	
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+  <data name="BEGINCopySectionToEveryModule" xml:space="preserve">
+    <value>BEGINCopySectionToEveryModule</value>
+  </data>
   <data name="AddedByIsRequired" xml:space="preserve">
     <value>Added By Is Required</value>
   </data>
@@ -129,8 +113,11 @@
   <data name="ChangedDateIsRequired" xml:space="preserve">
     <value>Changed Date Is Required</value>
   </data>
+  <data name="DataException" xml:space="preserve">
+    <value>Data Exception occured</value>
+  </data>
   <data name="DisplayNameIsRequired" xml:space="preserve">
-    <value>Display NameI s Required</value>
+    <value>Display Name Is Required</value>
   </data>
   <data name="DuplicateDisplayNameFound" xml:space="preserve">
     <value>Duplicate Display Name Found</value>
@@ -138,8 +125,37 @@
   <data name="DuplicateSystemNameFound" xml:space="preserve">
     <value>Duplicate System Name Found</value>
   </data>
+  <data name="DuplicateUserNameFound" xml:space="preserve">
+    <value>Duplicate UserName: '{0}' found</value>
+    <comment>{0}:userName</comment>
+  </data>
+  <data name="IdIsRequired" xml:space="preserve">
+    <value>Id Is Required</value>
+  </data>
+  <data name="InvalidId" xml:space="preserve">
+    <value>Invalid Id</value>
+  </data>
+  <data name="NullOrEmpty" xml:space="preserve">
+    <value>{0} cannot be null or empty string</value>
+    <comment>{0}:str</comment>
+  </data>
+  <data name="ParameterInvalid" xml:space="preserve">
+    <value>Invalid Parameter</value>
+  </data>
+  <data name="ParameterNull" xml:space="preserve">
+    <value>Null Parameter</value>
+  </data>
+  <data name="PluginIsRequired" xml:space="preserve">
+    <value>Plugin Is Required</value>
+  </data>
+  <data name="RangeAttribute_ValidationError" xml:space="preserve">
+    <value>{0} must be between {1} and {2} characters</value>
+  </data>
   <data name="RecordNotFound" xml:space="preserve">
     <value>Record Not Found</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Required</value>
   </data>
   <data name="StringLengthAttribute_InvalidMax" xml:space="preserve">
     <value>Must be less than {1} characters</value>
@@ -149,5 +165,194 @@
   </data>
   <data name="SystemNameIsRequired" xml:space="preserve">
     <value>System Name Is Required</value>
+  </data>
+  <data name="UserNameIsInvalid" xml:space="preserve">
+    <value>UserName Is Invalid</value>
+  </data>
+  <data name="UserNameIsRequired" xml:space="preserve">
+    <value>UserName Is Required</value>
+  </data>
+  <data name="ENDCopySectionToEveryModule" xml:space="preserve">
+    <value>ENDCopySectionToEveryModule</value>
+  </data>
+  <data name="BEGINModuleSpecificSection" xml:space="preserve">
+    <value>BEGINModuleSpecificSection</value>
+  </data>
+  <data name="AbbreviationIsRequired" xml:space="preserve">
+    <value>Abbreviation Is Required</value>
+  </data>
+  <data name="AddressTypeIsRequired" xml:space="preserve">
+    <value>Address Type is Required</value>
+  </data>
+  <data name="AreaCodeIsRequired" xml:space="preserve">
+    <value>Area Code Is Required</value>
+  </data>
+  <data name="CityIsRequired" xml:space="preserve">
+    <value>City is Required</value>
+  </data>
+  <data name="ClaimIssuerIsRequired" xml:space="preserve">
+    <value>Claim Issuer Is Required</value>
+  </data>
+  <data name="ClaimNotFound" xml:space="preserve">
+    <value>Claim Not Found</value>
+  </data>
+  <data name="ClaimTypeIsRequired" xml:space="preserve">
+    <value>Claim Type Is Required</value>
+  </data>
+  <data name="ClaimValueTypeIsRequired" xml:space="preserve">
+    <value>Claim Value Type Is Required</value>
+  </data>
+  <data name="CodeIsRequired" xml:space="preserve">
+    <value>Code Is Required</value>
+  </data>
+  <data name="ContentTypeIsRequired" xml:space="preserve">
+    <value>Content Type Is Required</value>
+  </data>
+  <data name="CountryCodeIsRequired" xml:space="preserve">
+    <value>Country Code Is Required</value>
+  </data>
+  <data name="CountryIsRequired" xml:space="preserve">
+    <value>Country Is Required</value>
+  </data>
+  <data name="CountyIsRequired" xml:space="preserve">
+    <value>County Is Required</value>
+  </data>
+  <data name="DuplicateAbbreviationFound" xml:space="preserve">
+    <value>Duplicate Abbreviation Found</value>
+  </data>
+  <data name="DuplicateClaimNameFound" xml:space="preserve">
+    <value>Duplicate Claim Name Found</value>
+  </data>
+  <data name="DuplicateClaimTypeFound" xml:space="preserve">
+    <value>Duplicate ClaimType Found</value>
+  </data>
+  <data name="DuplicateCodeFound" xml:space="preserve">
+    <value>Duplicate Code Found</value>
+  </data>
+  <data name="DuplicateLCIDDecimalFound" xml:space="preserve">
+    <value>Duplicate LCID Decimal Found</value>
+  </data>
+  <data name="DuplicateNameFound" xml:space="preserve">
+    <value>Duplicate Name Found</value>
+  </data>
+  <data name="DuplicateValueFound" xml:space="preserve">
+    <value>Duplicate Value Found</value>
+  </data>
+  <data name="DuplicateValueTypeFound" xml:space="preserve">
+    <value>Duplicate Value Type Found</value>
+  </data>
+  <data name="EmailIsInvalid" xml:space="preserve">
+    <value>Email is Invalid</value>
+  </data>
+  <data name="FacebookUserNameIsRequired" xml:space="preserve">
+    <value>Facebook User Name Is Required</value>
+  </data>
+  <data name="FileExtensionIsRequired" xml:space="preserve">
+    <value>File Extension Is Required</value>
+  </data>
+  <data name="GoogleUserNameIsRequired" xml:space="preserve">
+    <value>Google User Name Is Required</value>
+  </data>
+  <data name="ImageIsRequired" xml:space="preserve">
+    <value>Image Is Required</value>
+  </data>
+  <data name="LCIDDecimalIsRequired" xml:space="preserve">
+    <value>LCID Decimal Is Required</value>
+  </data>
+  <data name="LinkedInUserNameIsRequired" xml:space="preserve">
+    <value>LinkedIn User Name Is Required</value>
+  </data>
+  <data name="MimeTypeIsRequired" xml:space="preserve">
+    <value>MimeType Is Required</value>
+  </data>
+  <data name="NameIsRequired" xml:space="preserve">
+    <value>Name Is Required</value>
+  </data>
+  <data name="NotesIsRequired" xml:space="preserve">
+    <value>Notes Are Required</value>
+  </data>
+  <data name="PhoneNumberIsRequired" xml:space="preserve">
+    <value>Phone Number Is Required</value>
+  </data>
+  <data name="PhoneNumberTypeIsRequired" xml:space="preserve">
+    <value>Phone Number Type is Required</value>
+  </data>
+  <data name="PictureIsRequired" xml:space="preserve">
+    <value>Picture Is Required </value>
+  </data>
+  <data name="PostalCodeInvalid" xml:space="preserve">
+    <value>Invalid Postal Code</value>
+  </data>
+  <data name="RateIsRequired" xml:space="preserve">
+    <value>Rate Is Required</value>
+  </data>
+  <data name="StateOrProvinceIsRequired" xml:space="preserve">
+    <value>State Is Required</value>
+  </data>
+  <data name="SubjectIsRequired" xml:space="preserve">
+    <value>Subject Is Required</value>
+  </data>
+  <data name="TitleIsRequired" xml:space="preserve">
+    <value>Title Is Required</value>
+  </data>
+  <data name="TwitterScreenNameIsRequired" xml:space="preserve">
+    <value>Twitter Screen Name Is Required</value>
+  </data>
+  <data name="TypeIsRequired" xml:space="preserve">
+    <value>Type Is Required</value>
+  </data>
+  <data name="UserProfileIdIsInvalid" xml:space="preserve">
+    <value>User Profile Id Is Invalid</value>
+  </data>
+  <data name="ValueIsRequired" xml:space="preserve">
+    <value>Value Is Required</value>
+  </data>
+  <data name="ValueTypeIsRequired" xml:space="preserve">
+    <value>Value Type Is Required</value>
+  </data>
+  <data name="ENDModuleSpecificSection" xml:space="preserve">
+    <value>ENDModuleSpecificSection</value>
+  </data>
+  <data name="ImageIdIsRequired" xml:space="preserve">
+    <value>Image Id Is Required</value>
+  </data>
+  <data name="PictureIdIsRequired" xml:space="preserve">
+    <value>Picture Is Required</value>
+  </data>
+  <data name="UserProfilePictureIdIsRequired" xml:space="preserve">
+    <value>User Profile Picture Is Required</value>
+  </data>
+  <data name="UserProfilePictureBytesIdIsRequired" xml:space="preserve">
+    <value>User Profile Picture Bytes Is Required</value>
+  </data>
+  <data name="ImageBytesIdIsRequired" xml:space="preserve">
+    <value>Image Bytes Is Required</value>
+  </data>
+  <data name="ImageBytesIsRequired" xml:space="preserve">
+    <value>Image Bytes Is Required</value>
+  </data>
+  <data name="MimeTypeIdIsRequired" xml:space="preserve">
+    <value>MimeType Is Required</value>
+  </data>
+  <data name="UserProfileBytesIdIsRequired" xml:space="preserve">
+    <value>User Profile Bytes Is Required</value>
+  </data>
+  <data name="DataIsRequired" xml:space="preserve">
+    <value>Data is Required</value>
+  </data>
+  <data name="FileNameIsRequired" xml:space="preserve">
+    <value>File Name Is Required</value>
+  </data>
+  <data name="FileSizeIsRequired" xml:space="preserve">
+    <value>File Size Is Required</value>
+  </data>
+  <data name="TimeZoneIdIsRequired" xml:space="preserve">
+    <value>TimeZone Is Required</value>
+  </data>
+  <data name="TimeZoneInfoIdIsRequired" xml:space="preserve">
+    <value>TimeZone Id Is Required</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
 </root>

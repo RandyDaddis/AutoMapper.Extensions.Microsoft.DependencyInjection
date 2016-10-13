@@ -17,7 +17,7 @@ namespace Dna.NetCore.Core.BLL.Services.Localization
         private readonly ILocale_Queries _queries;
         private readonly ILocaleRepository _repository;
         private readonly ILocaleMapper _mapper;
-        private readonly ICommandBus_Dna _commandBus;
+        private readonly ICommandBus _commandBus;
         private readonly IDateTimeAdapter _dateTimeAdapter;
 
 		#endregion
@@ -37,8 +37,8 @@ namespace Dna.NetCore.Core.BLL.Services.Localization
         //    _mapper = Ioc.Resolve<ILocaleMapper>();
         //    if (_mapper == null) throw new Exception("Locale_CrudServices() - unable to resolve Ioc.Resolve<ILocaleMapper>()");
 
-        //    _commandBus = Ioc.Resolve<ICommandBus_Dna>();
-        //    if (_commandBus == null) throw new Exception("Locale_CrudServices() - unable to resolve Ioc.Resolve<ICommandBus_Dna>()");
+        //    _commandBus = Ioc.Resolve<ICommandBus>();
+        //    if (_commandBus == null) throw new Exception("Locale_CrudServices() - unable to resolve Ioc.Resolve<ICommandBus>()");
 
         //    _dateTimeAdapter = Ioc.Resolve<IDateTimeAdapter>();
         //    if (_dateTimeAdapter == null) throw new Exception("Locale_CrudServices() - unable to resolve Ioc.Resolve<IDateTimeAdapter>()");
@@ -47,7 +47,7 @@ namespace Dna.NetCore.Core.BLL.Services.Localization
         public Locale_CrudServices(ILocale_Queries locale_Queries, 
                                     ILocaleRepository repository,
                                     ILocaleMapper mapper,
-                                    ICommandBus_Dna commandBus,
+                                    ICommandBus commandBus,
                                     IDateTimeAdapter dateTimeAdapter
                                     )
 		{

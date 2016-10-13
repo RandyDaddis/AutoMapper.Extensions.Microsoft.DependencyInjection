@@ -9,7 +9,7 @@ using Dna.NetCore.Core.Common;
 
 namespace Dna.NetCore.Core.BLL.CommandHandlers.Localization
 {
-    public class Locale_ValidationHandler : IValidationHandler_Dna<LocaleCmd>
+    public class Locale_ValidationHandler : IValidationHandler<LocaleCmd>
     {
         #region Private Fields
 

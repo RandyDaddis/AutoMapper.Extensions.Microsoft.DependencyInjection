@@ -1,9 +1,4 @@
-﻿using Dna.NetCore.Core.BLL.Resources;
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Dna.NetCore.Core.BLL.EntityMetadata.Common
+﻿namespace Dna.NetCore.Core.BLL.EntityMetadata.Common
 {
     public abstract partial class ImageDataBase_Dao_Metadata : BaseMetadata
     {

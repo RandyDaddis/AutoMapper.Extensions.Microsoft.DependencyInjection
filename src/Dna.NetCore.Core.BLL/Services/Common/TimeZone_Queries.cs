@@ -78,7 +78,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         {
             string timeZoneInfoId = "";
 
-            SystemSetting systemSetting = _systemSettingQueries.Get(j => j.SystemName == SystemSettingConstants.Core_TimeZoneInfoId);
+            dao.SystemSetting systemSetting = _systemSettingQueries.Get(j => j.SystemName == SystemSettingConstants.Core_TimeZoneInfoId);
             if (systemSetting != null)
                 timeZoneInfoId = systemSetting.StringValue;
 

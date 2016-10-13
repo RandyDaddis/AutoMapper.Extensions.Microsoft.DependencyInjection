@@ -1,7 +1,6 @@
 ﻿using Dna.NetCore.Core.BLL.Entities.Localization;
 using Dna.NetCore.Core.BLL.Repositories.Localization;
 using Dna.NetCore.Core.Common;
-using NetCore.Core;
 using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Localization

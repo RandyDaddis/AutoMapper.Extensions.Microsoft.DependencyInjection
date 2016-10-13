@@ -8,7 +8,7 @@ using Dna.NetCore.Core.Common;
 
 namespace Dna.NetCore.Core.BLL.CommandHandlers.Localization
 {
-    public class Locale_UpdateHandler : ICommandHandler_Dna<LocaleCmd>
+    public class Locale_UpdateHandler : ICommandHandler<LocaleCmd>
     {
         #region Private Fields
 

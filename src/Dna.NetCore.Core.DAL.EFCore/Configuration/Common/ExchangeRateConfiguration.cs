@@ -1,5 +1,5 @@
 ﻿using Dna.NetCore.Core.BLL.Entities.Common;
-using Dna.NetCore.Core.DAL.EFCore.Temp.Cocowalla;
+using Dna.NetCore.Core.DAL.EFCore.Configuration.Temporary;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

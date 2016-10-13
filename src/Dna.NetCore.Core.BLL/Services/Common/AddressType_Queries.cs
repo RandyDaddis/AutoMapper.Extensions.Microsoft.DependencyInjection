@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Dna.NetCore.Core.Common;
 
 namespace Dna.NetCore.Core.BLL.Services.Common
 {
