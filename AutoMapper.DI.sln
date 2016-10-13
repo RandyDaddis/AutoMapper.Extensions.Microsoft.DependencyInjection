@@ -15,6 +15,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{1082ED20
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TestApp", "src\TestApp\TestApp.xproj", "{DE95F633-80B5-4248-A594-7FB357C8DAC9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console Applications", "Console Applications", "{64C7FAFF-369F-457E-9B39-E10CB45A4F3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{7AF0F7B0-DBDA-4BB7-A5B4-E7D95059C190}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{081E8575-0268-45D6-B0AD-75138E42116E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +42,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CD3BCC44-44C0-4A5A-9041-34B558A9FBF2} = {7AF0F7B0-DBDA-4BB7-A5B4-E7D95059C190}
+		{A93A7F85-292A-4130-891D-4307D3F60C30} = {081E8575-0268-45D6-B0AD-75138E42116E}
+		{DE95F633-80B5-4248-A594-7FB357C8DAC9} = {64C7FAFF-369F-457E-9B39-E10CB45A4F3C}
 	EndGlobalSection
 EndGlobal
