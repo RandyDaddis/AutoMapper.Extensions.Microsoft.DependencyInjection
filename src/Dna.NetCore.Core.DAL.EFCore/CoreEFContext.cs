@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using Dna.NetCore.Core.DAL.EFCore.Configuration.Temporary;
 using Dna.NetCore.Core.BLL.Entities.Common;
+using Dna.NetCore.Core.BLL.Entities.Localization;
 
 namespace Dna.NetCore.Core.DAL.EFCore
 {
@@ -20,7 +21,23 @@ namespace Dna.NetCore.Core.DAL.EFCore
 
         #region DbSets
 
+        // Common
         public DbSet<AddressType> AddressTypes { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<County> Counties { get; set; }
+        public DbSet<CountyCity> CountiesCities { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<ExchangeRate> ExchangeRates { get; set; }
+        public DbSet<MimeTypeGroup> MimeTypeGroups { get; set; }
+        public DbSet<MimeType> MimeTypes { get; set; }
+        public DbSet<PhoneNumberType> PhoneNumberTypes { get; set; }
+        public DbSet<StateOrProvince> StateOrProvinces { get; set; }
+        public DbSet<SystemSetting> SystemSettings { get; set; }
+        public DbSet<Dna.NetCore.Core.BLL.Entities.Common.TimeZone> TimeZones { get; set; }
+        // Localization
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Locale> Locales { get; set; }
 
         #endregion
 

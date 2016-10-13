@@ -5,19 +5,18 @@ using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Common
 {
-    public class AddressTypeRepository : RepositoryBase<AddressType, CoreEFContext>, IAddressTypeRepository
+    public class CountyRepository : RepositoryBase<County, CoreEFContext>, ICountyRepository
     {
-        public AddressTypeRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
+        public CountyRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
             : base(databaseFactory)
         {
         }
-
-        public virtual AddressType Create(out CustomMessage customMessage)
+        public virtual County Create(out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
             // TODO: refactor back to RepositoryBase when EF Core supports create()
-            AddressType dao = new AddressType();
+            County dao = new County();
             customMessage = customMessage1;
             return dao;
         }
