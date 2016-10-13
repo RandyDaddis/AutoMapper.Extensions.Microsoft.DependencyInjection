@@ -1,31 +1,9 @@
-﻿using NetCore.Core.BLL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+﻿using NetCore.Core.Repositories;
+using NetCore.Core.BLL.Entities;
 
-namespace NetCore.Core.BLL.Repositories.Common
+namespace NetCore.Core.BLL.Repositories
 {
-    public interface IAddressTypeRepository
+    public interface IAddressTypeRepository : IRepository<AddressType>
     {
-        #region Synchronous CRUD Methods
-
-        AddressType Add(AddressType entity);
-        AddressType Create();
-        AddressType Remove(AddressType entity);
-        IEnumerable<AddressType> Remove(Expression<Func<AddressType, bool>> where);
-        void Update(AddressType entity);
-
-        int SaveChanges();
-
-        #endregion
-
-        #region Queries
-
-        AddressType Get(Expression<Func<AddressType, bool>> where);
-        IQueryable<AddressType> GetAll();
-        IQueryable<AddressType> GetWhere(Expression<Func<AddressType, bool>> where);
-
-        #endregion
     }
 }
