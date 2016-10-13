@@ -1,0 +1,18 @@
+﻿{
+  "name": "NetCore.Core.BLL",
+  "title": "NetCore.Core.BLL",
+  "version": "1.0.1",
+  "authors": [ "Randy Daddis" ],
+  "copyright": "",
+  "description": "AutoMapper implementation for .NET Core",
+
+  "dependencies": {
+    "NETStandard.Library": "1.6.0"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
