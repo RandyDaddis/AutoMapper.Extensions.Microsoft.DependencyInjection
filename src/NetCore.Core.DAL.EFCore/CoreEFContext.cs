@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using NetCore.Core.DAL.EFCore.Configuration.Temporary;
+using NetCore.Core.BLL.Entities.Common;
 
 namespace NetCore.Core.DAL.EFCore
 {
@@ -30,7 +31,7 @@ namespace NetCore.Core.DAL.EFCore
             SaveChanges();
         }
 
-#if netstandard15
+        //#if netstandard1.5  // TODO: troubleshoot netstandard1.5 Target Framework Moniker reference
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -56,7 +57,7 @@ namespace NetCore.Core.DAL.EFCore
             }
 
         }
-#endif
+//#endif
 
 #if NET462
         protected override void OnModelCreating(ModelBuilder builder)

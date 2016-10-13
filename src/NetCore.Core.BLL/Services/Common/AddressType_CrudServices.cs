@@ -1,10 +1,12 @@
-﻿using NetCore.Core.Common;
-using NetCore.Core.BLL.DataTransferObjects.Common;
-using NetCore.Core.BLL.Entities.Common;
-using NetCore.Core.BLL.Repositories.Common;
-using NetCore.Core.BLL.Mappers.Common;
+﻿using Dna.NetCore.Core.Common;
+using Dna.NetCore.Core.BLL.Commands.Common;
+using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
+using Dna.NetCore.Core.BLL.Repositories.Common;
+using Dna.NetCore.Core.BLL.Mappers.Common;
 using System.Collections.Generic;
 using System.Linq;
+using Dna.NetCore.Core.CommandProcessing;
+using Dna.NetCore.Core.BLL.Entities.Common;
 
 namespace Dna.NetCore.Core.BLL.Services.Common
 {
@@ -15,7 +17,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         private readonly IAddressType_Queries _queries;
         private readonly IAddressTypeRepository _repository;
         private readonly IAddressTypeMapper _mapper;
-        private readonly ICommandBus_Dna _commandBus;
+        private readonly ICommandBus _commandBus;
         private readonly IDateTimeAdapter _dateTimeAdapter;
 
         #endregion
@@ -37,9 +39,9 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         //    if (_mapper == null)
         //        throw new Exception("AddressType_CrudServices() - unable to resolve Ioc.Resolve<IAddressTypeMapper>()");
 
-        //    _commandBus = Ioc.Resolve<ICommandBus_Dna>();
+        //    _commandBus = Ioc.Resolve<ICommandBus>();
         //    if (_commandBus == null)
-        //        throw new Exception("AddressType_CrudServices() - unable to resolve Ioc.Resolve<ICommandBus_Dna>()");
+        //        throw new Exception("AddressType_CrudServices() - unable to resolve Ioc.Resolve<ICommandBus>()");
 
         //    _dateTimeAdapter = Ioc.Resolve<IDateTimeAdapter>();
         //    if (_dateTimeAdapter == null) throw new Exception("AddressType_CrudServices() - unable to resolve Ioc.Resolve<IDateTimeAdapter>()");
@@ -48,7 +50,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         public AddressType_CrudServices(IAddressType_Queries queries, 
                                     IAddressTypeRepository repository,
                                     IAddressTypeMapper mapper,
-                                    ICommandBus_Dna commandBus,
+                                    ICommandBus commandBus,
                                     IDateTimeAdapter dateTimeAdapter
                                     )
         {

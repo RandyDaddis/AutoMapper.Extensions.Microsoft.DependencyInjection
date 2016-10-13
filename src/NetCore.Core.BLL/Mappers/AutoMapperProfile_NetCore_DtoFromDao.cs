@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using NetCore.Core.BLL.DataTransferObjects;
-using NetCore.Core.BLL.Entities;
+using NetCore.Core.BLL.Dtos.Common;
+using NetCore.Core.BLL.Entities.Common;
 
 namespace NetCore.Core.BLL.Mappers
 {

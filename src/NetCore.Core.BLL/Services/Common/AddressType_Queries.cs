@@ -1,13 +1,14 @@
-﻿using NetCore.Core.BLL.DataTransferObjects.Common;
-using NetCore.Core.BLL.Entities.Common;
-using NetCore.Core.BLL.Repositories.Common;
-using NetCore.Core.BLL.Mappers.Common;
+﻿using Dna.NetCore.Core.BLL.Commands.Common;
+using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
+using Dna.NetCore.Core.BLL.Entities.Common;
+using Dna.NetCore.Core.BLL.Repositories.Common;
+using Dna.NetCore.Core.BLL.Mappers.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace NetCore.Core.BLL.Services.Common
+namespace Dna.NetCore.Core.BLL.Services.Common
 {
     public partial class AddressType_Queries : IAddressType_Queries
     {
