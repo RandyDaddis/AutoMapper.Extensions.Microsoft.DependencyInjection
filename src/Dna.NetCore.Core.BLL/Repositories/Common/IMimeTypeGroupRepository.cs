@@ -3,7 +3,7 @@ using Dna.NetCore.Core.Repositories;
 
 namespace Dna.NetCore.Core.BLL.Repositories.Common
 {
-    public interface IMimeTypeGroupRepository : IRepository_CM_T<MimeTypeGroup>
+    public interface IMimeTypeGroupRepository : IRepository<MimeTypeGroup>
     {
     }
 }

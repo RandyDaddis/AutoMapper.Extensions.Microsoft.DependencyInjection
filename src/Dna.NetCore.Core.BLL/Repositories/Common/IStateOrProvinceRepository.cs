@@ -3,7 +3,7 @@ using Dna.NetCore.Core.BLL.Entities.Common;
 
 namespace Dna.NetCore.Core.BLL.Repositories.Common
 {
-    public interface IStateOrProvinceRepository : IRepository_CM_T<StateOrProvince>
+    public interface IStateOrProvinceRepository : IRepository<StateOrProvince>
     {
     }
 }

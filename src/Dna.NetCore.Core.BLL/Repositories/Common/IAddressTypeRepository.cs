@@ -3,7 +3,7 @@ using Dna.NetCore.Core.BLL.Entities.Common;
 
 namespace Dna.NetCore.Core.BLL.Repositories.Common
 {
-    public interface IAddressTypeRepository : IRepository_CM_T<AddressType>
+    public interface IAddressTypeRepository : IRepository<AddressType>
     {
     }
 }
