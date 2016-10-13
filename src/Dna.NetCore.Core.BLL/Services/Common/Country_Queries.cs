@@ -9,6 +9,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Dna.NetCore.Core.BLL.Constants;
 using Dna.NetCore.Core.BLL.Entities;
+using Dna.NetCore.Core.Common;
 
 namespace Dna.NetCore.Core.BLL.Services.Common
 {

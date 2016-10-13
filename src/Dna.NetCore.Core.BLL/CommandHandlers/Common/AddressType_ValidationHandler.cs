@@ -12,13 +12,13 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
     {
         #region Private Fields
 
-        private readonly IAddressTypeQueries _queries;
+        private readonly IAddressType_Queries _queries;
 
         #endregion
 
         #region ctor
 
-        public AddressType_ValidationHandler(IAddressTypeQueries service)
+        public AddressType_ValidationHandler(IAddressType_Queries service)
         {
             this._queries = service;
         }
