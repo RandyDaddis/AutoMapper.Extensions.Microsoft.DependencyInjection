@@ -1,0 +1,25 @@
+﻿{
+  "name": "Dna.NetCore.Core.BLL",
+  "title": "Dna.NetCore.Core.BLL",
+  "version": "1.0.1",
+  "authors": [ "Randy Daddis" ],
+  "copyright": "(c) 2016 Randy Daddis",
+  "description": "AutoMapper implementation for .NET Core",
+
+  "dependencies": {
+    "Dna.NetCore.Core": {
+      "version": "1.0.1",
+      "target": "project"
+    },
+    "Autofac": "4.1.0",
+    "AutoMapper": "5.1.1",
+    "NETStandard.Library": "1.6.0",
+    "System.ComponentModel.Annotations": "4.1.0"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}

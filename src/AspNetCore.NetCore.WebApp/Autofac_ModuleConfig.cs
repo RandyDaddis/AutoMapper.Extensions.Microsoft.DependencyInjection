@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using NetCore.Core.BLL;
-using NetCore.Core.DAL.EFCore;
+using Dna.NetCore.Core.BLL;
+using Dna.NetCore.Core.DAL.EFCore;
 
 namespace AspNetCore.NetCore.WebApp
 {

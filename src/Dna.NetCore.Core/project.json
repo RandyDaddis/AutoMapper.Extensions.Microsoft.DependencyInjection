@@ -1,0 +1,21 @@
+﻿{
+  "name": "Dna.NetCore.Core",
+  "title": "Dna.NetCore.Core",
+  "version": "1.0.1",
+  "authors": [ "Randy Daddis" ],
+  "copyright": "(c) 2016 Randy Daddis",
+
+  "dependencies": {
+    "Autofac": "4.1.0",
+    "NETStandard.Library": "1.6.0",
+    "System.Data.SqlClient": "4.1.0",
+    "System.Runtime.Serialization.Formatters": "4.0.0-rc3-24212-01",
+    "System.Runtime.Serialization.Primitives": "4.1.1"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}

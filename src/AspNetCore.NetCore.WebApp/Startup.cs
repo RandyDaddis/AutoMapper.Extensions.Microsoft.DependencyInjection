@@ -12,10 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NetCore.Core;
-using NetCore.Core.BLL.Mappers;
-using NetCore.Core.BLL.Repositories;
-using NetCore.Core.DAL.EFCore;
-using NetCore.Core.DAL.EFCore.Repositories;
+using Dna.NetCore.Core.BLL.Mappers;
+using Dna.NetCore.Core.BLL.Repositories;
+using Dna.NetCore.Core.DAL.EFCore;
+using Dna.NetCore.Core.DAL.EFCore.Repositories;
 using System;
 
 namespace AspNetCore.NetCore.WebApp

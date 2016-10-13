@@ -13,15 +13,15 @@
       "version": "1.1.2",
       "target": "project"
     },
-    "NetCore.Core": {
+    "Dna.NetCore.Core": {
       "version": "1.0.1",
       "target": "project"
     },
-    "NetCore.Core.BLL": {
+    "Dna.NetCore.Core.BLL": {
       "version": "1.0.1",
       "target": "project"
     },
-    "NetCore.Core.DAL.EFCore": {
+    "Dna.NetCore.Core.DAL.EFCore": {
       "version": "1.0.1",
       "target": "project"
     },

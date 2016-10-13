@@ -1,0 +1,28 @@
+﻿{
+  "name": "Dna.NetCore.Core.DAL.EFCore",
+  "title": "Dna.NetCore.Core.DAL.EFCore",
+  "version": "1.0.1",
+  "authors": [ "Randy Daddis" ],
+  "copyright": "(c) 2016 Randy Daddis",
+
+  "dependencies": {
+    "Dna.NetCore.Core": {
+      "version": "1.0.1",
+      "target": "project"
+    },
+    "Dna.NetCore.Core.BLL": {
+      "version": "1.0.1",
+      "target": "project"
+    },
+    "Autofac": "4.1.0",
+    "Microsoft.EntityFrameworkCore": "1.0.1",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.1",
+    "NETStandard.Library": "1.6.0"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
