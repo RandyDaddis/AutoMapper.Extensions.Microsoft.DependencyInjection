@@ -1,5 +1,7 @@
 ﻿{
-  "version": "1.0.0-*",
+  "name": "TestApp",
+  "title": "TestApp",
+  "version": "1.0.0",
   "buildOptions": {
     "emitEntryPoint": true
   },
@@ -9,7 +11,7 @@
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "Microsoft.NETCore.App": {
       "type": "platform",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   },
 

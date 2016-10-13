@@ -1,4 +1,6 @@
 ﻿{
+  "name": "AutoMapper.Extensions.Microsoft.DependencyInjection",
+  "title": "AutoMapper.Extensions.Microsoft.DependencyInjection",
   "version": "1.1.2",
   "authors": [ "Jimmy Bogard" ],
   "copyright": "Copyright Jimmy Bogard",
@@ -6,8 +8,8 @@
   "packOptions": {
     "copyright": "Copyright Jimmy Bogard",
     "owners": [ "Jimmy Bogard" ],
-    "licenseUrl": "https://github.com/AutoMapper/AutoMapper/blob/master/LICENSE.txt",
-    "projectUrl": "http://automapper.org",
+    "licenseUrl": "https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection/blob/master/LICENSE",
+    "projectUrl": "https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection",
     "iconUrl": "https://s3.amazonaws.com/automapper/icon.png",
     "requireLicenseAcceptance": false,
     "summary": "AutoMapper extensions for ASP.NET Core"
@@ -15,7 +17,7 @@
 
   "dependencies": {
     "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
-    "AutoMapper": "5.0.2"
+    "AutoMapper": "5.1.1"
   },
 
   "frameworks": {
@@ -43,6 +45,6 @@
       "buildOptions": {
         "define": [ "DEPENDENCY_MODEL" ]
       }
-    } 
+    }
   }
 }
