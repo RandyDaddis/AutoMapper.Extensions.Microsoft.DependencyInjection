@@ -3,10 +3,14 @@
   "title": "NetCore.Core.BLL",
   "version": "1.0.1",
   "authors": [ "Randy Daddis" ],
-  "copyright": "",
+  "copyright": "(c) 2016 Randy Daddis",
   "description": "AutoMapper implementation for .NET Core",
 
   "dependencies": {
+    "NetCore.Core": {
+      "version": "1.0.1",
+      "target": "project"
+    },
     "AutoMapper": "5.1.1",
     "NETStandard.Library": "1.6.0",
     "System.ComponentModel.Annotations": "4.1.0"

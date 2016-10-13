@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using NetCore.Core.Common;
+using NetCore.Core.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -23,7 +25,7 @@ namespace NetCore.Core.DAL.EFCore.Repositories
 
         #region ctor
 
-        protected RepositoryBase_CM_T(IDatabaseFactory<U> databaseFactory)
+        protected RepositoryBase(IDatabaseFactory<U> databaseFactory)
         {
             DatabaseFactory = databaseFactory;
             _dbset = DataContext.Set<T>();
@@ -77,13 +79,14 @@ namespace NetCore.Core.DAL.EFCore.Repositories
             return dao as T;
         }
 
+        // Not implemented in .NET Core 1.0.1
         //public virtual T Create(out CustomMessage customMessage)
         //{
         //    CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
         //    object dao = null;
         //    try
         //    {
-        //        dao = _dbset.Create();  // Not implemented in .NET Core 1.0.1
+        //        dao = _dbset.Create();
         //    }
         //    catch (SqlException exception)
         //    {
@@ -128,16 +131,18 @@ namespace NetCore.Core.DAL.EFCore.Repositories
             return objects as IEnumerable<T>;
         }
 
-        // Summary:
-        //     Marks the given entity as Deleted such that it will be deleted from the database
-        //     when SaveChanges is called. Note that the entity must exist in the context
-        //     in some other state before this method is called.
-        //
-        // Remarks:
-        //     Note that if the entity exists in the context in the Added state, then this
-        //     method will cause it to be detached from the context. This is because an
-        //     Added entity is assumed not to exist in the database such that trying to
-        //     delete it does not make sense.
+        /// <summary>
+        /// 
+        ///     Marks the given entity as Deleted such that it will be deleted from the database
+        ///     when SaveChanges is called. Note that the entity must exist in the context
+        ///     in some other state before this method is called.
+        /// </summary>
+        /// <remarks>
+        ///     Note that if the entity exists in the context in the Added state, then this
+        ///     method will cause it to be detached from the context. This is because an
+        ///     Added entity is assumed not to exist in the database such that trying to
+        ///     delete it does not make sense.
+        /// </remarks>
         public virtual T Remove(T entity, out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };

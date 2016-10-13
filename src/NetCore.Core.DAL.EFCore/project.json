@@ -1,11 +1,15 @@
 ﻿{
-  "authors": [ "Randy Daddis" ],
-  "copyright": "(c) 2016 Daddis Consulting Services",
-  "name": "Dna.NetCore.Core.DAL.EFCore",
-  "title": "Dna.NetCore.Core.DAL.EFCore",
+  "name": "NetCore.Core.DAL.EFCore",
+  "title": "NetCore.Core.DAL.EFCore",
   "version": "1.0.1",
+  "authors": [ "Randy Daddis" ],
+  "copyright": "(c) 2016 Randy Daddis",
 
   "dependencies": {
+    "NetCore.Core": {
+      "version": "1.0.1",
+      "target": "project"
+    },
     "NetCore.Core.BLL": {
       "version": "1.0.1",
       "target": "project"

@@ -1,5 +1,6 @@
 ﻿using NetCore.Core.BLL.Entities;
 using NetCore.Core.BLL.Repositories;
+using NetCore.Core.Common;
 using System.Collections.Generic;
 
 namespace NetCore.Core.DAL.EFCore.Repositories
