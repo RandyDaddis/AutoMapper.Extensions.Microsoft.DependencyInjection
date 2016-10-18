@@ -56,10 +56,12 @@ namespace AspNetCore.NetCore.WebApp
 
             services.AddMvc();
 
-            services.AddAutoMapper(cfg =>
-            {
-                cfg.AddProfile<AutoMapperProfile_NetCore_DtoFromDao>();
-            });
+            services.AddAutoMapper();
+            //services.AddAutoMapper(cfg =>
+            //{
+            //    cfg.AddProfile<AutoMapperProfile_NetCore_DtoFromDao>();
+            //    cfg.AddProfile<AutoMapperProfile_NetCore_SummariesFromDaos>();
+            //});
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
