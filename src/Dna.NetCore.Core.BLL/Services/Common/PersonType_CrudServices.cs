@@ -16,15 +16,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate PersonType_CrudServices Factory();
-
-        //public PersonType_CrudServices()
-        //{
-        //    _customerTypeRepository = Ioc.Resolve<IPersonTypeRepository>();
-        //    if (_customerTypeRepository == null)
-        //        throw new Exception("PersonType_CrudServices() - unable to resolve Ioc.Resolve<IPersonTypeRepository>()");
-        //}
-
         public PersonType_CrudServices(IPersonTypeRepository customerTypeRepository, IDateTimeAdapter dateTimeAdapter)
         {
             _customerTypeRepository = customerTypeRepository;
@@ -209,9 +200,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         }
         public virtual PersonType SetDefaultPropertyValues(PersonType dao, string userName)
         {
-            // TODO: base.SetDefaultPropertyValues(dao, userName); 
-            //                                      is duplicated in BaseEntity().SetDefaultBasePropertyValues<T>(T dao, string userName) & 
-            //                                                       CrudServices_Base_EntityType_Parent<P>.SetDefaultPropertyValues(P dao, string userName)
             dao = SetAddPropertyValues(dao, userName);
             dao = SetUpdatePropertyValues(dao, userName);
 

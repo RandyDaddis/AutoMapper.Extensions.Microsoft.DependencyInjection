@@ -6,6 +6,8 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 {
     public partial class TimeZoneInfoHelperServices : ITimeZoneInfoHelperServices
     {
+        #region Methods
+
         public TimeZoneInfo GetByDisplayName(string displayName)
         {
             ReadOnlyCollection<TimeZoneInfo> timeZones = GetSystemTimeZones();
@@ -80,5 +82,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             //TimeSpan timeSpan = TimeZoneInfo.GetUtcOffset(dateTime);  // TODO: troubleshoot
             //return timeSpan;
         }
+        #endregion
     }
 }

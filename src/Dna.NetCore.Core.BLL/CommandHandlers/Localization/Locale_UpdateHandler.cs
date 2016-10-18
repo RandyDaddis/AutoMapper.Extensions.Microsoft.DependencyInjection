@@ -19,16 +19,6 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Localization
 
 		#region ctor
 
-        //public delegate Locale_UpdateHandler Factory();
-
-        //public Locale_UpdateHandler()
-        //{
-        //    _repository = Ioc.Resolve<ILocaleRepository>();
-        //    if (_repository == null) throw new Exception("Locale_Edit_Handler() - unable to resolve Ioc.Resolve<ILocaleRepository>()");
-        //    _mapper = Ioc.Resolve<ILocaleMapper>();
-        //    if (_mapper == null) throw new Exception("Locale_Edit_Handler() - unable to resolve Ioc.Resolve<ILocaleMapper>()");
-        //}
-
         public Locale_UpdateHandler(ILocaleRepository repository,
                                         ILocaleMapper mapper)
 		{

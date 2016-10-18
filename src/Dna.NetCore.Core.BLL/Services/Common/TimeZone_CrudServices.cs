@@ -19,20 +19,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate TimeZone_CrudServices Factory();
-
-        //public TimeZone_CrudServices()
-        //{
-        //    _repository = Ioc.Resolve<ITimeZoneRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("TimeZone_CrudServices() - unable to resolve Ioc.Resolve<ITimeZoneRepository>()");
-
-        //    _mapper = Ioc.Resolve<ITimeZoneMapper>();
-        //    if (_mapper == null)
-        //        throw new Exception("TimeZone_CrudServices() - unable to resolve Ioc.Resolve<ITimeZoneMapper>()");
-
-        //}
-
         public TimeZone_CrudServices(ITimeZoneRepository repository,
                                         ITimeZoneMapper mapper,
                                         IDateTimeAdapter dateTimeAdapter)

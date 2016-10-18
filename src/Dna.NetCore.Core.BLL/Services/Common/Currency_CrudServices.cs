@@ -23,29 +23,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate Currency_CrudServices Factory();
-
-        //public Currency_CrudServices()
-        //{
-        //    _queries = Ioc.Resolve<ICurrency_Queries>();
-        //    if (_queries == null) throw new Exception("Currency_CrudServices() - unable to resolve Ioc.Resolve<ICurrency_Queries>()");
-
-        //    _repository = Ioc.Resolve<ICurrencyRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("Currency_CrudServices() - unable to resolve Ioc.Resolve<ICurrencyRepository>()");
-
-        //    _mapper = Ioc.Resolve<ICurrencyMapper>();
-        //    if (_mapper == null)
-        //        throw new Exception("Currency_CrudServices() - unable to resolve Ioc.Resolve<ICurrencyMapper>()");
-
-        //    _commandBus = Ioc.Resolve<ICommandBus>();
-        //    if (_commandBus == null)
-        //        throw new Exception("Currency_CrudServices() - unable to resolve Ioc.Resolve<ICommandBus>()");
-
-        //    _dateTimeAdapter = Ioc.Resolve<IDateTimeAdapter>();
-        //    if (_dateTimeAdapter == null) throw new Exception("Currency_CrudServices() - unable to resolve Ioc.Resolve<IDateTimeAdapter>()");
-        //}
-
         public Currency_CrudServices(ICurrency_Queries currency_Queries, 
                                     ICurrencyRepository repository,
                                     ICurrencyMapper mapper,
@@ -297,8 +274,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         {
             if (cmd != null)
             {
-                // DEVNOTE:  AuthenticationService is an OWIN middleware and is currently executing in the IIS pipeline which has a dependency on HTTP
-                cmd.AddedBy = userName;  // TODO: consider refactoring to this.GetUserName() after refactoring AuthenticationService to be self-hosted instead of running in the IIS pipeline
+                cmd.AddedBy = userName;
                 cmd.AddedDate = _dateTimeAdapter.UtcNow;
                 cmd.ChangedBy = userName;
                 cmd.ChangedDate = _dateTimeAdapter.UtcNow;
@@ -324,9 +300,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         {
             if (cmd != null)
             {
-                // TODO: consider refactoring to this.GetUserName() after refactoring AuthenticationService to be self-hosted instead of running in the IIS pipeline
-                // DEVNOTE: OWIN middleware is currently executing in the IIS pipeline which has a dependency on HTTP
-                // cmd.ChangedBy = GetUserName();
                 cmd.ChangedBy = userName;
                 cmd.ChangedDate = _dateTimeAdapter.UtcNow;
             }

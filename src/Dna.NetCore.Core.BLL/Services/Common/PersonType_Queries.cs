@@ -16,16 +16,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate PersonType_Queries Factory();
-
-        //public PersonType_Queries()
-        //{
-        //    _repository = Ioc.Resolve<IPersonTypeRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("PersonType_Queries() - unable to resolve Ioc.Resolve<IPersonTypeRepository>()");
-
-        //}
-
         public PersonType_Queries(IPersonTypeRepository repository)
         {
             _repository = repository;

@@ -22,20 +22,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate AddressType_Queries Factory();
-
-        //public AddressType_Queries()
-        //{
-        //    _repository = Ioc.Resolve<IAddressTypeRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("AddressType_Queries() - unable to resolve Ioc.Resolve<IAddressTypeRepository>()");
-
-        //    _mapper = Ioc.Resolve<IAddressTypeMapper>();
-        //    if (_mapper == null)
-        //        throw new Exception("AddressType_Queries() - unable to resolve Ioc.Resolve<IAddressTypeMapper>()");
-
-        //}
-
         public AddressType_Queries(IAddressTypeRepository repository,
                                     IAddressTypeMapper mapper
                                     )

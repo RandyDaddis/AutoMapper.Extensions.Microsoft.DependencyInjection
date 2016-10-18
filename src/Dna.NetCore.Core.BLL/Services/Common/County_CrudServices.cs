@@ -26,32 +26,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate County_CrudServices Factory();
-
-        //public County_CrudServices()
-        //{
-        //    _stateOrProvinceQueries = Ioc.Resolve<IStateOrProvince_Queries>();
-        //    if (_stateOrProvinceQueries == null) throw new Exception("StateOrProvince_CrudServices() - unable to resolve Ioc.Resolve<IStateOrProvince_Queries>()");
-
-        //    _queries = Ioc.Resolve<ICounty_Queries>();
-        //    if (_queries == null) throw new Exception("County_CrudServices() - unable to resolve Ioc.Resolve<ICounty_Queries>()");
-
-        //    _repository = Ioc.Resolve<ICountyRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("County_CrudServices() - unable to resolve Ioc.Resolve<ICountyRepository>()");
-
-        //    _mapper = Ioc.Resolve<ICountyMapper>();
-        //    if (_mapper == null)
-        //        throw new Exception("County_CrudServices() - unable to resolve Ioc.Resolve<ICountyMapper>()");
-
-        //    _commandBus = Ioc.Resolve<ICommandBus>();
-        //    if (_commandBus == null)
-        //        throw new Exception("County_CrudServices() - unable to resolve Ioc.Resolve<ICommandBus>()");
-
-        //    _dateTimeAdapter = Ioc.Resolve<IDateTimeAdapter>();
-        //    if (_dateTimeAdapter == null) throw new Exception("County_CrudServices() - unable to resolve Ioc.Resolve<IDateTimeAdapter>()");
-        //}
-
         public County_CrudServices(IStateOrProvince_Queries stateOrProvince_Queries, 
                                     ICounty_Queries queries, 
                                     ICountyRepository repository,
@@ -361,9 +335,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         {
             if (cmd != null)
             {
-                // TODO: consider refactoring to this.GetUserName() after refactoring AuthenticationService to be self-hosted instead of running in the IIS pipeline
-                // DEVNOTE: OWIN middleware is currently executing in the IIS pipeline which has a dependency on HTTP
-                // cmd.ChangedBy = GetUserName();
                 cmd.ChangedBy = userName;
                 cmd.ChangedDate = _dateTimeAdapter.UtcNow;
             }

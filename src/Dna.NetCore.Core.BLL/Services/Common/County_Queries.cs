@@ -22,20 +22,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate County_Queries Factory();
-
-        //public County_Queries()
-        //{
-        //    _repository = Ioc.Resolve<ICountyRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("County_Queries() - unable to resolve Ioc.Resolve<ICountyRepository>()");
-
-        //    _mapper = Ioc.Resolve<ICountyMapper>();
-        //    if (_mapper == null)
-        //        throw new Exception("County_Queries() - unable to resolve Ioc.Resolve<ICountyMapper>()");
-
-        //}
-
         public County_Queries(ICountyRepository repository,
                                     ICountyMapper mapper
                                     )

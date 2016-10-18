@@ -17,16 +17,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate SystemSetting_Queries Factory();
-
-        //public SystemSetting_Queries()
-        //{
-        //    _repository = Ioc.Resolve<ISystemSettingRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("SystemSetting_Queries() - unable to resolve Ioc.Resolve<ISystemSettingRepository>()");
-
-        //}
-
         public SystemSetting_Queries(ISystemSettingRepository repository
                                     )
         {

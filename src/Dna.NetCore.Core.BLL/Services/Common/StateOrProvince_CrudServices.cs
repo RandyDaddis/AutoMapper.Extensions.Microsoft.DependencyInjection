@@ -28,38 +28,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate StateOrProvince_CrudServices Factory();
-
-        //public StateOrProvince_CrudServices()
-        //{
-        //    _countryQueries = Ioc.Resolve<ICountry_Queries>();
-        //    if (_countryQueries == null) throw new Exception("StateOrProvince_CrudServices() - unable to resolve Ioc.Resolve<ICountry_Queries>()");
-
-        //    //_timeZoneQueries = Ioc.Resolve<ITimeZone_Queries>();
-        //    //if (_timeZoneQueries == null) throw new Exception("StateOrProvince_CrudServices() - unable to resolve Ioc.Resolve<ITimeZone_Queries>()");
-
-        //    //_timeZoneInfoHelperService = Ioc.Resolve<ITimeZoneInfoHelperServices>();
-        //    //if (_timeZoneInfoHelperService == null) throw new Exception("StateOrProvince_CrudServices() - unable to resolve Ioc.Resolve<ITimeZoneInfoHelperServices>()");
-
-        //    _queries = Ioc.Resolve<IStateOrProvince_Queries>();
-        //    if (_queries == null) throw new Exception("StateOrProvince_CrudServices() - unable to resolve Ioc.Resolve<IStateOrProvince_Queries>()");
-
-        //    _repository = Ioc.Resolve<IStateOrProvinceRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("StateOrProvince_CrudServices() - unable to resolve Ioc.Resolve<IStateOrProvinceRepository>()");
-
-        //    _mapper = Ioc.Resolve<IStateOrProvinceMapper>();
-        //    if (_mapper == null)
-        //        throw new Exception("StateOrProvince_CrudServices() - unable to resolve Ioc.Resolve<IStateOrProvinceMapper>()");
-
-        //    _commandBus = Ioc.Resolve<ICommandBus>();
-        //    if (_commandBus == null)
-        //        throw new Exception("StateOrProvince_CrudServices() - unable to resolve Ioc.Resolve<ICommandBus>()");
-
-        //    _dateTimeAdapter = Ioc.Resolve<IDateTimeAdapter>();
-        //    if (_dateTimeAdapter == null) throw new Exception("StateOrProvince_CrudServices() - unable to resolve Ioc.Resolve<IDateTimeAdapter>()");
-        //}
-
         public StateOrProvince_CrudServices(ICountry_Queries country_Queries,
                                                 //ITimeZone_Queries timeZoneQueries,
                                                 //ITimeZoneInfoHelperServices timeZoneInfoHelperService,
@@ -387,8 +355,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         {
             if (cmd != null)
             {
-                // DEVNOTE:  AuthenticationService is an OWIN middleware and is currently executing in the IIS pipeline which has a dependency on HTTP
-                cmd.AddedBy = userName;  // TODO: consider refactoring to this.GetUserName() after refactoring AuthenticationService to be self-hosted instead of running in the IIS pipeline
+                cmd.AddedBy = userName;
                 cmd.AddedDate = _dateTimeAdapter.UtcNow;
                 cmd.ChangedBy = userName;
                 cmd.ChangedDate = _dateTimeAdapter.UtcNow;
@@ -415,9 +382,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         {
             if (cmd != null)
             {
-                // TODO: consider refactoring to this.GetUserName() after refactoring AuthenticationService to be self-hosted instead of running in the IIS pipeline
-                // DEVNOTE: OWIN middleware is currently executing in the IIS pipeline which has a dependency on HTTP
-                // cmd.ChangedBy = GetUserName();
                 cmd.ChangedBy = userName;
                 cmd.ChangedDate = _dateTimeAdapter.UtcNow;
             }

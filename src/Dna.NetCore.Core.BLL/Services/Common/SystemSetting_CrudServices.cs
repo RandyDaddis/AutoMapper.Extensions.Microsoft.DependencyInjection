@@ -18,16 +18,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate SystemSetting_CrudServices Factory();
-
-        //public SystemSetting_CrudServices()
-        //{
-        //    _repository = Ioc.Resolve<ISystemSettingRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("SystemSetting_CrudServices() - unable to resolve Ioc.Resolve<ISystemSettingRepository>()");
-
-        //}
-
         public SystemSetting_CrudServices(ISystemSettingRepository repository,
                                             ISystemSetting_Queries systemSettingQueries,
                                             IDateTimeAdapter dateTimeAdapter)

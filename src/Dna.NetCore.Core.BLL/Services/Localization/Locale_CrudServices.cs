@@ -24,26 +24,6 @@ namespace Dna.NetCore.Core.BLL.Services.Localization
 
 		#region ctor
 
-        //public delegate Locale_CrudServices Factory();
-
-        //public Locale_CrudServices()
-        //{
-        //    _queries = Ioc.Resolve<ILocale_Queries>();
-        //    if (_queries == null) throw new Exception("Locale_CrudServices() - unable to resolve Ioc.Resolve<ILocale_Queries>()");
-
-        //    _repository = Ioc.Resolve<ILocaleRepository>();
-        //    if (_repository == null) throw new Exception("Locale_CrudServices() - unable to resolve Ioc.Resolve<ILocaleRepository>()");
-
-        //    _mapper = Ioc.Resolve<ILocaleMapper>();
-        //    if (_mapper == null) throw new Exception("Locale_CrudServices() - unable to resolve Ioc.Resolve<ILocaleMapper>()");
-
-        //    _commandBus = Ioc.Resolve<ICommandBus>();
-        //    if (_commandBus == null) throw new Exception("Locale_CrudServices() - unable to resolve Ioc.Resolve<ICommandBus>()");
-
-        //    _dateTimeAdapter = Ioc.Resolve<IDateTimeAdapter>();
-        //    if (_dateTimeAdapter == null) throw new Exception("Locale_CrudServices() - unable to resolve Ioc.Resolve<IDateTimeAdapter>()");
-        //}
-
         public Locale_CrudServices(ILocale_Queries locale_Queries, 
                                     ILocaleRepository repository,
                                     ILocaleMapper mapper,
@@ -295,8 +275,7 @@ namespace Dna.NetCore.Core.BLL.Services.Localization
         {
             if (cmd != null)
             {
-                // DEVNOTE:  AuthenticationService is an OWIN middleware and is currently executing in the IIS pipeline which has a dependency on HTTP
-                cmd.AddedBy = userName;  // TODO: consider refactoring to this.GetUserName() after refactoring AuthenticationService to be self-hosted instead of running in the IIS pipeline
+                cmd.AddedBy = userName;
                 cmd.AddedDate = _dateTimeAdapter.UtcNow;
             }
 
@@ -319,9 +298,6 @@ namespace Dna.NetCore.Core.BLL.Services.Localization
         {
             if (cmd != null)
             {
-                // TODO: consider refactoring to this.GetUserName() after refactoring AuthenticationService to be self-hosted instead of running in the IIS pipeline
-                // DEVNOTE: OWIN middleware is currently executing in the IIS pipeline which has a dependency on HTTP
-                // cmd.ChangedBy = GetUserName();
                 cmd.ChangedBy = userName;
 
                 if (cmd.Id == 0)

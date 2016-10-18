@@ -22,20 +22,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate City_Queries Factory();
-
-        //public City_Queries()
-        //{
-        //    _repository = Ioc.Resolve<ICityRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("City_Queries() - unable to resolve Ioc.Resolve<ICityRepository>()");
-
-        //    _mapper = Ioc.Resolve<ICityMapper>();
-        //    if (_mapper == null)
-        //        throw new Exception("City_Queries() - unable to resolve Ioc.Resolve<ICityMapper>()");
-
-        //}
-
         public City_Queries(ICityRepository repository,
                                     ICityMapper mapper
                                     )

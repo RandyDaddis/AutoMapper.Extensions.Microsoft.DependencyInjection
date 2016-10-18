@@ -16,16 +16,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        //public delegate PhoneNumberType_Queries Factory();
-
-        //public PhoneNumberType_Queries()
-        //{
-        //    _repository = Ioc.Resolve<IPhoneNumberTypeRepository>();
-        //    if (_repository == null)
-        //        throw new Exception("PhoneNumberType_Queries() - unable to resolve Ioc.Resolve<IPhoneNumberTypeRepository>()");
-
-        //}
-
         public PhoneNumberType_Queries(IPhoneNumberTypeRepository repository)
         {
             _repository = repository;
