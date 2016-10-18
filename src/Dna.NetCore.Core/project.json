@@ -1,9 +1,10 @@
-﻿{
+{
+  "authors": [ "Randy Daddis" ],
+  "copyright": "(c) 2016 Randy Daddis",
+  "description": "Dna Core implementation for .NET Core",
   "name": "Dna.NetCore.Core",
   "title": "Dna.NetCore.Core",
   "version": "1.0.1",
-  "authors": [ "Randy Daddis" ],
-  "copyright": "(c) 2016 Randy Daddis",
 
   "dependencies": {
     "Autofac": "4.1.0",

@@ -1,10 +1,10 @@
-﻿{
+{
+  "authors": [ "Randy Daddis" ],
+  "copyright": "(c) 2016 Randy Daddis",
+  "description": "Dna BLL implementation for .NET Core",
   "name": "Dna.NetCore.Core.BLL",
   "title": "Dna.NetCore.Core.BLL",
   "version": "1.0.1",
-  "authors": [ "Randy Daddis" ],
-  "copyright": "(c) 2016 Randy Daddis",
-  "description": "AutoMapper implementation for .NET Core",
 
   "dependencies": {
     "Dna.NetCore.Core": {
