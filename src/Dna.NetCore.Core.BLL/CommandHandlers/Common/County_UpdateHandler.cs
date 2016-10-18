@@ -19,16 +19,6 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
 
         #region ctor
 
-        //public delegate County_UpdateHandler Factory();
-
-        //public County_UpdateHandler()
-        //{
-        //    _repository = Ioc.Resolve<ICountyRepository>();
-        //    if (_repository == null) throw new Exception("County_UpdateHandler() - unable to resolve Ioc.Resolve<ICountyRepository>()");
-        //    _mapper = Ioc.Resolve<ICountyMapper>();
-        //    if (_mapper == null) throw new Exception("County_UpdateHandler() - unable to resolve Ioc.Resolve<ICountyMapper>()");
-        //}
-
         public County_UpdateHandler(ICountyRepository repository,
                                         ICountyMapper mapper)
         {

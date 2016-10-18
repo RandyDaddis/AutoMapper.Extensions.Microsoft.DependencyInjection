@@ -19,14 +19,6 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
 
         #region ctor
 
-        //public delegate StateOrProvince_ValidationHandler Factory();
-
-        //public StateOrProvince_ValidationHandler()
-        //{
-        //    _queries = Ioc.Resolve<IStateOrProvince_Queries>();
-        //    if (_queries == null) throw new Exception("StateOrProvince_ValidationHandler() - unable to resolve  Ioc.Resolve<IStateOrProvinceService>()");
-        //}
-
         public StateOrProvince_ValidationHandler(IStateOrProvince_Queries service)
         {
             this._queries = service;

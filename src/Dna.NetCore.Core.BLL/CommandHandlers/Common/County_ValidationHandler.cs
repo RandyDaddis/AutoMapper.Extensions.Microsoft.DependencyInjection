@@ -19,14 +19,6 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
 
         #region ctor
 
-        //public delegate County_ValidationHandler Factory();
-
-        //public County_ValidationHandler()
-        //{
-        //    _queries = Ioc.Resolve<ICounty_Queries>();
-        //    if (_queries == null) throw new Exception("County_ValidationHandler() - unable to resolve  Ioc.Resolve<ICountyService>()");
-        //}
-
         public County_ValidationHandler(ICounty_Queries service)
         {
             this._queries = service;

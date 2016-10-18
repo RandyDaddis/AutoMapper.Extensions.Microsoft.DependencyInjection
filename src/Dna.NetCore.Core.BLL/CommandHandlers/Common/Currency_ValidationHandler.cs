@@ -19,14 +19,6 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
 
         #region ctor
 
-        //public delegate Currency_ValidationHandler Factory();
-
-        //public Currency_ValidationHandler()
-        //{
-        //    _queries = Ioc.Resolve<ICurrency_Queries>();
-        //    if (_queries == null) throw new Exception("Currency_ValidationHandler() - unable to resolve  Ioc.Resolve<ICurrencyService>()");
-        //}
-
         public Currency_ValidationHandler(ICurrency_Queries service)
         {
             this._queries = service;

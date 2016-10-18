@@ -19,16 +19,6 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
 
         #region ctor
 
-        //public delegate Currency_UpdateHandler Factory();
-
-        //public Currency_UpdateHandler()
-        //{
-        //    _repository = Ioc.Resolve<ICurrencyRepository>();
-        //    if (_repository == null) throw new Exception("Currency_UpdateHandler() - unable to resolve Ioc.Resolve<ICurrencyRepository>()");
-        //    _mapper = Ioc.Resolve<ICurrencyMapper>();
-        //    if (_mapper == null) throw new Exception("Currency_UpdateHandler() - unable to resolve Ioc.Resolve<ICurrencyMapper>()");
-        //}
-
         public Currency_UpdateHandler(ICurrencyRepository repository,
                                         ICurrencyMapper mapper)
         {

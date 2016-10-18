@@ -19,16 +19,6 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
 
         #region ctor
 
-        //public delegate StateOrProvince_UpdateHandler Factory();
-
-        //public StateOrProvince_UpdateHandler()
-        //{
-        //    _repository = Ioc.Resolve<IStateOrProvinceRepository>();
-        //    if (_repository == null) throw new Exception("StateOrProvince_UpdateHandler() - unable to resolve Ioc.Resolve<IStateOrProvinceRepository>()");
-        //    _mapper = Ioc.Resolve<IStateOrProvinceMapper>();
-        //    if (_mapper == null) throw new Exception("StateOrProvince_UpdateHandler() - unable to resolve Ioc.Resolve<IStateOrProvinceMapper>()");
-        //}
-
         public StateOrProvince_UpdateHandler(IStateOrProvinceRepository repository,
                                         IStateOrProvinceMapper mapper)
         {
