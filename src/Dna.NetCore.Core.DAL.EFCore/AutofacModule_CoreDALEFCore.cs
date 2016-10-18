@@ -22,7 +22,7 @@ namespace Dna.NetCore.Core.DAL.EFCore
 
         private static void RegisterComponents(ContainerBuilder builder)
         {
-            var assembly = Assembly.Load(new AssemblyName("NetCore.Core.DAL.EFCore"));
+            var assembly = Assembly.Load(new AssemblyName("Dna.NetCore.Core.DAL.EFCore"));
 
             builder.RegisterAssemblyTypes(assembly)
                 .Where(t => t.Name.EndsWith("Repository"))
@@ -36,6 +36,6 @@ namespace Dna.NetCore.Core.DAL.EFCore
 
         }
 
-#endregion
+        #endregion
     }
 }

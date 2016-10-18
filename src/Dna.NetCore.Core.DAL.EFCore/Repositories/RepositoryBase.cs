@@ -79,7 +79,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             return dao as T;
         }
 
-        // Not implemented in .NET Core 1.0.1
+        // Not implemented in EF Core 1.0.1
         //public virtual T Create(out CustomMessage customMessage)
         //{
         //    CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };

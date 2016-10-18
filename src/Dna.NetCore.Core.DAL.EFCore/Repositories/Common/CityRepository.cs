@@ -9,8 +9,9 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Common
     {
         public CityRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
             : base(databaseFactory)
-        {
-        }
+        { }
+
+        // TODO: refactor back to RepositoryBase when EF Core supports create()
         public virtual City Create(out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };

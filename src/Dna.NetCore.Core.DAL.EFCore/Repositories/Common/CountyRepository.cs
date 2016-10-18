@@ -9,13 +9,13 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Common
     {
         public CountyRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
             : base(databaseFactory)
-        {
-        }
+        { }
+
+        // TODO: refactor back to RepositoryBase when EF Core supports create()
         public virtual County Create(out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
-            // TODO: refactor back to RepositoryBase when EF Core supports create()
             County dao = new County();
             customMessage = customMessage1;
             return dao;

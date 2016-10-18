@@ -48,7 +48,6 @@ namespace Dna.NetCore.Core.DAL.EFCore
             SaveChanges();
         }
 
-        //#if netstandard1.5  // TODO: troubleshoot netstandard1.5 Target Framework Moniker reference
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -74,39 +73,6 @@ namespace Dna.NetCore.Core.DAL.EFCore
             }
 
         }
-//#endif
-
-#if NET462
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            this.Configuration.AutoDetectChangesEnabled = true;
-            //this.Configuration.LazyLoadingEnabled = true;
-            //this.Configuration.ProxyCreationEnabled = true;
-
-            //modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-
-            //	manually load each configuration: 
-            //      modelBuilder.Configurations.Add(new Address_Configuration());
-            // - or -
-            //	use reflection to dynamically load all configuration:
-            //      System.Type configType = typeof(Address_Configuration);
-            //      var typesToRegister = Assembly.GetAssembly(configType).GetTypes()
-            //
-            var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
-            .Where(type => !String.IsNullOrEmpty(type.Namespace))
-            .Where(type => type.BaseType != null
-                            && type.BaseType.IsGenericType
-                            && type.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>));
-            foreach (var type in typesToRegister)
-            {
-                dynamic configurationInstance = Activator.CreateInstance(type);
-                modelBuilder.Configurations.Add(configurationInstance);
-            }
-            base.OnModelCreating(modelBuilder);
-        }
-#endif
         #endregion
     }
 }

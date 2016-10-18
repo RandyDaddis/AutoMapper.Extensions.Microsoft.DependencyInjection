@@ -22,7 +22,7 @@ namespace Dna.NetCore.Core.BLL
 
         private void RegisterComponents(ContainerBuilder builder)
         {
-            var assembly = Assembly.Load(new AssemblyName("NetCore.Core.BLL"));
+            var assembly = Assembly.Load(new AssemblyName("Dna.NetCore.Core.BLL"));
 
             // ConfigurationProviderProxy.cs is no longer necessary. 
             //   - I have refactored type mapping from AutoMapper.IMappingEngine to AutoMapper.AutoMapper
