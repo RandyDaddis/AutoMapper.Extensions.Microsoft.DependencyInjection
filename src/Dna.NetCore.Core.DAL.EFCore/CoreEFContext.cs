@@ -1,11 +1,10 @@
-﻿using Dna.NetCore.Core.BLL.Entities;
+﻿using Dna.NetCore.Core.BLL.Entities.Common;
+using Dna.NetCore.Core.BLL.Entities.Localization;
+using Dna.NetCore.Core.DAL.EFCore.Configuration.Temporary.Cocowalla;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Reflection;
-using Dna.NetCore.Core.DAL.EFCore.Configuration.Temporary;
-using Dna.NetCore.Core.BLL.Entities.Common;
-using Dna.NetCore.Core.BLL.Entities.Localization;
 
 namespace Dna.NetCore.Core.DAL.EFCore
 {
