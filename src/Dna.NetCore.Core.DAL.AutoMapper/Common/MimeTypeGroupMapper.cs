@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using System.Collections.Generic;
 using Dna.NetCore.Core.BLL.Commands.Common;
 using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
 using Dna.NetCore.Core.BLL.Entities.Common;
+using Dna.NetCore.Core.BLL.Mappers.Common;
+using System.Collections.Generic;
 
-namespace Dna.NetCore.Core.BLL.Mappers.Common
+namespace Dna.NetCore.Core.DAL.AutoMapper.Common
 {
     public partial class MimeTypeGroupMapper : IMimeTypeGroupMapper
 	{

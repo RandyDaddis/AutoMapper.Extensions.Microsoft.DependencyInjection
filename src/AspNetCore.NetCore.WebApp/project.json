@@ -21,6 +21,10 @@
       "version": "1.0.1",
       "target": "project"
     },
+    "Dna.NetCore.Core.DAL.AutoMapper": {
+      "version": "1.0.1",
+      "target": "project"
+    },
     "Dna.NetCore.Core.DAL.EFCore": {
       "version": "1.0.1",
       "target": "project"

@@ -2,7 +2,7 @@
 using Dna.NetCore.Core.BLL.Entities.Common;
 using AutoMapper;
 
-namespace Dna.NetCore.Core.BLL.Mappers
+namespace Dna.NetCore.Core.DAL.AutoMapper
 {
     public class AutoMapperProfile_NetCore_SummariesFromDaos : Profile
     {

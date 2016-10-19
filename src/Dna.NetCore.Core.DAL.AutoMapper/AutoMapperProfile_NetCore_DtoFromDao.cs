@@ -2,7 +2,7 @@
 using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
 using Dna.NetCore.Core.BLL.Entities.Common;
 
-namespace Dna.NetCore.Core.BLL.Mappers
+namespace Dna.NetCore.Core.DAL.AutoMapper
 {
     public class AutoMapperProfile_NetCore_DtoFromDao : Profile
     {

@@ -4,7 +4,6 @@ using AspNetCore.NetCore.WebApp.Services;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
-using Dna.NetCore.Core.BLL.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

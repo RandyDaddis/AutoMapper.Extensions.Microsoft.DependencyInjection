@@ -1,10 +1,11 @@
-﻿using Dna.NetCore.Core.BLL.Commands.Localization;
+﻿using AutoMapper;
+using Dna.NetCore.Core.BLL.Commands.Localization;
 using Dna.NetCore.Core.BLL.DataTransferObjects.Localization;
 using Dna.NetCore.Core.BLL.Entities.Localization;
-using AutoMapper;
+using Dna.NetCore.Core.BLL.Mappers.Localization;
 using System.Collections.Generic;
 
-namespace Dna.NetCore.Core.BLL.Mappers.Localization
+namespace Dna.NetCore.Core.DAL.AutoMapper.Localization
 {
     public class LocaleMapper : ILocaleMapper
 	{
