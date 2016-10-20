@@ -1,6 +1,8 @@
 ﻿using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
 using Dna.NetCore.Core.BLL.Entities.Common;
 using AutoMapper;
+using Dna.NetCore.Core.BLL.Entities.Localization;
+using Dna.NetCore.Core.BLL.DataTransferObjects.Localization;
 
 namespace Dna.NetCore.Core.DAL.AutoMapper
 {
@@ -19,10 +21,15 @@ namespace Dna.NetCore.Core.DAL.AutoMapper
 
         protected void CreateMaps()
         {
-            if (Mapper.Configuration.FindTypeMapFor(typeof(AddressType), typeof(AddressTypeSummary)) == null)
-                CreateMap<AddressType, AddressTypeSummary>();
-
-            Mapper.Configuration.AssertConfigurationIsValid();
+            CreateMap<AddressType, AddressTypeSummary>();
+            CreateMap<PersonType, PersonType_Summary>();
+            CreateMap<County, CountySummary>();
+            CreateMap<Country, CountrySummary>();
+            CreateMap<Currency, Currency_Summary>();
+            CreateMap<ExchangeRate, ExchangeRate_Summary>();
+            CreateMap<Locale, Locale_Summary>();
+            CreateMap<StateOrProvince, StateOrProvince_Summary>();
+            CreateMap<Dna.NetCore.Core.BLL.Entities.Common.TimeZone, TimeZone_Summary>();
         }
 
         #endregion

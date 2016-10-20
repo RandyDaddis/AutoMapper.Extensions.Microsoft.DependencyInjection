@@ -4,6 +4,7 @@ using AspNetCore.NetCore.WebApp.Services;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
+using Dna.NetCore.Core.DAL.AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -55,12 +56,12 @@ namespace AspNetCore.NetCore.WebApp
 
             services.AddMvc();
 
-            services.AddAutoMapper();
-            //services.AddAutoMapper(cfg =>
-            //{
-            //    cfg.AddProfile<AutoMapperProfile_NetCore_DtoFromDao>();
-            //    cfg.AddProfile<AutoMapperProfile_NetCore_SummariesFromDaos>();
-            //});
+            //services.AddAutoMapper();
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<AutoMapperProfile_NetCore_DtoFromDao>();
+                cfg.AddProfile<AutoMapperProfile_NetCore_SummariesFromDaos>();
+            });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
