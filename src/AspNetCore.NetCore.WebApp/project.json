@@ -1,6 +1,7 @@
 ﻿{
   "authors": [ "Randy Daddis" ],
   "copyright": "",
+  "project": "https://github.com/RandyDaddis/AutoMapper.Extensions.Microsoft.DependencyInjection/blob/AspNetCoreMvcSampleCode/src/AspNetCore.NetCore.WebApp/Startup.cs",
   "name": "AspNetCore.NetCore.WebApp",
   "title": "AspNetCore.NetCore.WebApp",
   "version": "1.0.1",
