@@ -14,14 +14,9 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface ICountryMapper
 	{
         CountryCmd GetCmdFromDao(Country source);
-        CountryCmd GetCmdFromDto(CountryDto source);
-
         Country GetDaoFromCmd(CountryCmd source);
-
         CountryDto GetDtoFromDao(Country source);
-
         IEnumerable<CountryDto> GetDtosFromDaos(IEnumerable<Country> source);
-
         IEnumerable<CountrySummary> GetSummariesFromDaos(IEnumerable<Country> source);
     }
 }

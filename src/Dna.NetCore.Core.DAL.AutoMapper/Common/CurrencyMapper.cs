@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Common
 			return value;
 		}
 
-        public CurrencyCmd GetCmdFromDto(CurrencyDto source)
-        {
-            CurrencyCmd value = Mapper.Map<CurrencyCmd>(source);
-            return value;
-        }
-
         public Currency GetDaoFromCmd(CurrencyCmd source)
 		{
             Currency value = Mapper.Map<Currency>(source);

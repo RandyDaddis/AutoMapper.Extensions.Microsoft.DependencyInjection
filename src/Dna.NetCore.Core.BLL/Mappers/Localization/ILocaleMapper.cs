@@ -14,7 +14,6 @@ namespace Dna.NetCore.Core.BLL.Mappers.Localization
 	public interface ILocaleMapper
 	{
         LocaleCmd GetCmdFromDao(Locale source);
-        LocaleCmd GetCmdFromDto(LocaleDto source);
         Locale GetDaoFromCmd(LocaleCmd source);
         LocaleDto GetDtoFromDao(Locale source);
         IEnumerable<LocaleDto> GetDtosFromDaos(IEnumerable<Locale> source);

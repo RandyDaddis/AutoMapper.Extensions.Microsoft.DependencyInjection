@@ -14,14 +14,9 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface IStateOrProvinceMapper
 	{
         StateOrProvinceCmd GetCmdFromDao(StateOrProvince source);
-        StateOrProvinceCmd GetCmdFromDto(StateOrProvinceDto source);
-
         StateOrProvince GetDaoFromCmd(StateOrProvinceCmd source);
-
         StateOrProvinceDto GetDtoFromDao(StateOrProvince source);
-
         IEnumerable<StateOrProvinceDto> GetDtosFromDaos(IEnumerable<StateOrProvince> source);
-
         IEnumerable<StateOrProvince_Summary> GetSummariesFromDaos(IEnumerable<StateOrProvince> source);
     }
 }

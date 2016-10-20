@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Common
             return value;
         }
 
-        public PersonTypeCmd GetCmdFromDto(PersonTypeDto source)
-        {
-            PersonTypeCmd value = Mapper.Map<PersonTypeCmd>(source);
-            return value;
-        }
-
         public PersonType GetDaoFromCmd(PersonTypeCmd source)
         {
             PersonType value = Mapper.Map<PersonType>(source);

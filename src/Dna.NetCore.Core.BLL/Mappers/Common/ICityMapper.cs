@@ -14,14 +14,9 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface ICityMapper
 	{
         CityCmd GetCmdFromDao(City source);
-        CityCmd GetCmdFromDto(CityDto source);
-
         City GetDaoFromCmd(CityCmd source);
-
         CityDto GetDtoFromDao(City source);
-
         IEnumerable<CityDto> GetDtosFromDaos(IEnumerable<City> source);
-
         IEnumerable<CitySummary> GetSummariesFromDaos(IEnumerable<City> source);
     }
 }

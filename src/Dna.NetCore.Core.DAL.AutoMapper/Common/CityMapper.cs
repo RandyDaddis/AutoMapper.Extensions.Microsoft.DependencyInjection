@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Common
 			return value;
 		}
 
-        public CityCmd GetCmdFromDto(CityDto source)
-        {
-            CityCmd value = Mapper.Map<CityCmd>(source);
-            return value;
-        }
-
         public City GetDaoFromCmd(CityCmd source)
 		{
             City value = Mapper.Map<City>(source);

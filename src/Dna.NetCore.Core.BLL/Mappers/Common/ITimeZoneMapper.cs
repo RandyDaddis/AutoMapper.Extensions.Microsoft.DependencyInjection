@@ -14,7 +14,6 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface ITimeZoneMapper
     {
         TimeZoneCmd GetCmdFromDao(dao.TimeZone source);
-        TimeZoneCmd GetCmdFromDto(TimeZoneDto source);
         dao.TimeZone GetDaoFromCmd(TimeZoneCmd source);
         TimeZoneDto GetDtoFromDao(dao.TimeZone source);
         IEnumerable<TimeZoneDto> GetDtosFromDaos(IEnumerable<dao.TimeZone> source);

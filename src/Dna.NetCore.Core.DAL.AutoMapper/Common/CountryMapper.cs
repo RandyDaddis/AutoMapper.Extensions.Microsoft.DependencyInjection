@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Common
 			return value;
 		}
 
-        public CountryCmd GetCmdFromDto(CountryDto source)
-        {
-            CountryCmd value = Mapper.Map<CountryCmd>(source);
-            return value;
-        }
-
         public Country GetDaoFromCmd(CountryCmd source)
 		{
             Country value = Mapper.Map<Country>(source);

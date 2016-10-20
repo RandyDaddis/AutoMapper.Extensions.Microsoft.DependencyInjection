@@ -14,7 +14,6 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface ICurrencyMapper
 	{
         CurrencyCmd GetCmdFromDao(Currency source);
-        CurrencyCmd GetCmdFromDto(CurrencyDto source);
         Currency GetDaoFromCmd(CurrencyCmd source);
         CurrencyDto GetDtoFromDao(Currency source);
         IEnumerable<CurrencyDto> GetDtosFromDaos(IEnumerable<Currency> source);

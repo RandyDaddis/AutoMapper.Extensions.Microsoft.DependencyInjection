@@ -14,14 +14,9 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface IPersonTypeMapper
     {
         PersonTypeCmd GetCmdFromDao(PersonType source);
-        PersonTypeCmd GetCmdFromDto(PersonTypeDto source);
-
         PersonType GetDaoFromCmd(PersonTypeCmd source);
-
         PersonTypeDto GetDtoFromDao(PersonType source);
-
         IEnumerable<PersonTypeDto> GetDtosFromDaos(IEnumerable<PersonType> source);
-
         IEnumerable<PersonType_Summary> GetSummariesFromDaos(IEnumerable<PersonType> source);
     }
 }

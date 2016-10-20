@@ -14,7 +14,6 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface IAddressTypeMapper
 	{
         AddressTypeCmd GetCmdFromDao(AddressType source);
-        AddressTypeCmd GetCmdFromDto(AddressTypeDto source);
         AddressType GetDaoFromCmd(AddressTypeCmd source);
         AddressTypeDto GetDtoFromDao(AddressType source);
         IEnumerable<AddressTypeDto> GetDtosFromDaos(IEnumerable<AddressType> source);

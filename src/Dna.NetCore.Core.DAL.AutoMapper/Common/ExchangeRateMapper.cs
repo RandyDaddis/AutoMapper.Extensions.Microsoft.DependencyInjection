@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Common
 			return value;
 		}
 
-        public ExchangeRateCmd GetCmdFromDto(ExchangeRateDto source)
-        {
-            ExchangeRateCmd value = Mapper.Map<ExchangeRateCmd>(source);
-            return value;
-        }
-
         public ExchangeRate GetDaoFromCmd(ExchangeRateCmd source)
 		{
             ExchangeRate value = Mapper.Map<ExchangeRate>(source);

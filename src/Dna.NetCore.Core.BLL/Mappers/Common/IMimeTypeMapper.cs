@@ -14,14 +14,9 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface IMimeTypeMapper
 	{
         MimeTypeCmd GetCmdFromDao(MimeType source);
-        MimeTypeCmd GetCmdFromDto(MimeTypeDto source);
-
         MimeType GetDaoFromCmd(MimeTypeCmd source);
-
         MimeTypeDto GetDtoFromDao(MimeType source);
-
         IEnumerable<MimeTypeDto> GetDtosFromDaos(IEnumerable<MimeType> source);
-
         //IEnumerable<MimeType_Summary> GetSummariesFromDaos(IEnumerable<MimeType> source);
     }
 }

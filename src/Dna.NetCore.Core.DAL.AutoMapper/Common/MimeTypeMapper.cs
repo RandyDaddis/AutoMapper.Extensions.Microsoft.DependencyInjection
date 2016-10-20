@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Common
 			return value;
 		}
 
-        public MimeTypeCmd GetCmdFromDto(MimeTypeDto source)
-        {
-            MimeTypeCmd value = Mapper.Map<MimeTypeCmd>(source);
-            return value;
-        }
-
         public MimeType GetDaoFromCmd(MimeTypeCmd source)
 		{
             MimeType value = Mapper.Map<MimeType>(source);

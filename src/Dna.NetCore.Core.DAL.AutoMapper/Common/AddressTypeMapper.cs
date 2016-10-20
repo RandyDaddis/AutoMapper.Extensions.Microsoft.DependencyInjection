@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Common
 			return value;
 		}
 
-        public AddressTypeCmd GetCmdFromDto(AddressTypeDto source)
-        {
-            AddressTypeCmd value = Mapper.Map<AddressTypeCmd>(source);
-            return value;
-        }
-
         public AddressType GetDaoFromCmd(AddressTypeCmd source)
 		{
             AddressType value = Mapper.Map<AddressType>(source);

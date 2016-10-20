@@ -14,14 +14,9 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface IMimeTypeGroupMapper
 	{
         MimeTypeGroupCmd GetCmdFromDao(MimeTypeGroup source);
-        MimeTypeGroupCmd GetCmdFromDto(MimeTypeGroupDto source);
-
         MimeTypeGroup GetDaoFromCmd(MimeTypeGroupCmd source);
-
         MimeTypeGroupDto GetDtoFromDao(MimeTypeGroup source);
-
         IEnumerable<MimeTypeGroupDto> GetDtosFromDaos(IEnumerable<MimeTypeGroup> source);
-
         //IEnumerable<MimeTypeGroup_Summary> GetSummariesFromDaos(IEnumerable<MimeTypeGroup> source);
     }
 }

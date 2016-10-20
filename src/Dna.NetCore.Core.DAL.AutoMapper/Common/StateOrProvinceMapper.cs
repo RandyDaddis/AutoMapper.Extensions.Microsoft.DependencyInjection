@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Common
 			return value;
 		}
 
-        public StateOrProvinceCmd GetCmdFromDto(StateOrProvinceDto source)
-        {
-            StateOrProvinceCmd value = Mapper.Map<StateOrProvinceCmd>(source);
-            return value;
-        }
-
         public StateOrProvince GetDaoFromCmd(StateOrProvinceCmd source)
 		{
             StateOrProvince value = Mapper.Map<StateOrProvince>(source);

@@ -14,14 +14,9 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface ICountyMapper
 	{
         CountyCmd GetCmdFromDao(County source);
-        CountyCmd GetCmdFromDto(CountyDto source);
-
         County GetDaoFromCmd(CountyCmd source);
-
         CountyDto GetDtoFromDao(County source);
-
         IEnumerable<CountyDto> GetDtosFromDaos(IEnumerable<County> source);
-
         IEnumerable<CountySummary> GetSummariesFromDaos(IEnumerable<County> source);
     }
 }

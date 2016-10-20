@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Common
             return value;
         }
 
-        public TimeZoneCmd GetCmdFromDto(TimeZoneDto source)
-        {
-            TimeZoneCmd value = Mapper.Map<TimeZoneCmd>(source);
-            return value;
-        }
-
         public dao.TimeZone GetDaoFromCmd(TimeZoneCmd source)
         {
             dao.TimeZone value = Mapper.Map<dao.TimeZone>(source);

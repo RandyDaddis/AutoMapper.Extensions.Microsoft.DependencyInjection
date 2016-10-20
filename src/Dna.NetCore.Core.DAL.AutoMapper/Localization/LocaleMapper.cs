@@ -17,12 +17,6 @@ namespace Dna.NetCore.Core.DAL.AutoMapper.Localization
 			return value;
 		}
 
-        public LocaleCmd GetCmdFromDto(LocaleDto source)
-        {
-            LocaleCmd value = Mapper.Map<LocaleCmd>(source);
-            return value;
-        }
-
         public Locale GetDaoFromCmd(LocaleCmd source)
 		{
             Locale value = Mapper.Map<Locale>(source);

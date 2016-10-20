@@ -14,14 +14,9 @@ namespace Dna.NetCore.Core.BLL.Mappers.Common
     public partial interface IExchangeRateMapper
 	{
         ExchangeRateCmd GetCmdFromDao(ExchangeRate source);
-        ExchangeRateCmd GetCmdFromDto(ExchangeRateDto source);
-
         ExchangeRate GetDaoFromCmd(ExchangeRateCmd source);
-
         ExchangeRateDto GetDtoFromDao(ExchangeRate source);
-
         IEnumerable<ExchangeRateDto> GetDtosFromDaos(IEnumerable<ExchangeRate> source);
-
         IEnumerable<ExchangeRate_Summary> GetSummariesFromDaos(IEnumerable<ExchangeRate> source);
     }
 }
