@@ -3,6 +3,8 @@ using Dna.NetCore.Core.BLL.Entities.Common;
 using AutoMapper;
 using Dna.NetCore.Core.BLL.Entities.Localization;
 using Dna.NetCore.Core.BLL.DataTransferObjects.Localization;
+using Dna.NetCore.Core.BLL.Entities.Plugins;
+using Dna.NetCore.Core.BLL.DataTransferObjects.Plugins;
 
 namespace Dna.NetCore.Core.DAL.AutoMapper
 {
@@ -28,6 +30,7 @@ namespace Dna.NetCore.Core.DAL.AutoMapper
             CreateMap<Currency, Currency_Summary>();
             CreateMap<ExchangeRate, ExchangeRate_Summary>();
             CreateMap<Locale, Locale_Summary>();
+            CreateMap<Plugin, PluginSummary>();
             CreateMap<StateOrProvince, StateOrProvince_Summary>();
             CreateMap<Dna.NetCore.Core.BLL.Entities.Common.TimeZone, TimeZone_Summary>();
         }

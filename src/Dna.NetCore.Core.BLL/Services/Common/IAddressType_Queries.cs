@@ -17,7 +17,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         //int GetId(string displayName);
 
-        //IEnumerable<AddressTypeDto> GetList(bool isActive = true);
+        IEnumerable<AddressTypeDto> GetList(bool isActive = true, bool isDeleted = false);
         IEnumerable<AddressTypeDto> GetList(Expression<Func<AddressType, bool>> wherePredicate);
 
         IEnumerable<AddressTypeSummary> GetSummaryList(Expression<Func<AddressType, bool>> wherePredicate);

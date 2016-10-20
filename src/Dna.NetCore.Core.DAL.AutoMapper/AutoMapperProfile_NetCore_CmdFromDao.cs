@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using Dna.NetCore.Core.BLL.Commands.Common;
 using Dna.NetCore.Core.BLL.Commands.Localization;
+using Dna.NetCore.Core.BLL.Commands.Plugins;
 using Dna.NetCore.Core.BLL.Entities.Common;
 using Dna.NetCore.Core.BLL.Entities.Localization;
+using Dna.NetCore.Core.BLL.Entities.Plugins;
 
 namespace Dna.NetCore.Core.DAL.AutoMapper
 {
@@ -37,6 +39,7 @@ namespace Dna.NetCore.Core.DAL.AutoMapper
             CreateMap<MimeTypeGroup, MimeTypeGroupCmd>();
             CreateMap<PersonType, PersonTypeCmd>();
             CreateMap<PhoneNumberType, PhoneNumberTypeCmd>();
+            CreateMap<Plugin, PluginCmd>();
             CreateMap<StateOrProvince, StateOrProvinceCmd>()
             .ForMember(cmd => cmd.CountryAbbreviation, opt => opt.MapFrom(s => s.Country.Abbreviation));
             CreateMap<Dna.NetCore.Core.BLL.Entities.Common.TimeZone, TimeZoneCmd>();

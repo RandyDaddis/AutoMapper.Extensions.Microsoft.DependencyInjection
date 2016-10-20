@@ -1,5 +1,6 @@
 ﻿using Dna.NetCore.Core.BLL.Entities.Common;
 using Dna.NetCore.Core.BLL.Entities.Localization;
+using Dna.NetCore.Core.BLL.Entities.Plugins;
 using Dna.NetCore.Core.DAL.EFCore.Configuration.Temporary.Cocowalla;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -37,6 +38,8 @@ namespace Dna.NetCore.Core.DAL.EFCore
         // Localization
         public DbSet<Language> Languages { get; set; }
         public DbSet<Locale> Locales { get; set; }
+        // Plugins
+        public DbSet<Plugin> Plugins { get; set; }
 
         #endregion
 

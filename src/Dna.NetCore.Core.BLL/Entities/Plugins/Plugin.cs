@@ -1,19 +1,25 @@
-﻿using Dna.NetCore.Core.BLL.EntityMetadata.Common;
+﻿using Dna.NetCore.Core.BLL.EntityMetadata.Plugins;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Dna.NetCore.Core.BLL.Entities.Common
+namespace Dna.NetCore.Core.BLL.Entities.Plugins
 {
-    [Table("Core_AddressType", Schema = "dbo")]
+    [Table("Core_Plugin", Schema = "dbo")]
 #if NET462
-    [MetadataType(typeof(AddressType_Dao_Metadata))]
+    [MetadataType(typeof(Plugin_Dao_Metadata))]
 #endif
-    public partial class AddressType : BaseEntity
-    {
+    public partial class Plugin : BaseEntity
+	{
+		#region Public Properties
+
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual int Id { get; set; }
         public virtual string SystemName { get; set; }
         public virtual string DisplayName { get; set; }
+		public virtual string Notes { get; set; }
         public virtual bool IsActive { get; set; }
+        public virtual int AssemblyLoadOrder { get; set; }
+
+        #endregion
     }
 }

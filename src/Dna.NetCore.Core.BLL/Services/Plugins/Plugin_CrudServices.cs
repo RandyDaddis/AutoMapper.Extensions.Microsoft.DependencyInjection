@@ -1,22 +1,22 @@
-﻿using Dna.NetCore.Core.BLL.Commands.Common;
-using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
-using Dna.NetCore.Core.BLL.Entities.Common;
-using Dna.NetCore.Core.BLL.Mappers.Common;
-using Dna.NetCore.Core.BLL.Repositories.Common;
+﻿using Dna.NetCore.Core.BLL.Commands.Plugins;
+using Dna.NetCore.Core.BLL.DataTransferObjects.Plugins;
+using Dna.NetCore.Core.BLL.Entities.Plugins;
+using Dna.NetCore.Core.BLL.Mappers.Plugins;
+using Dna.NetCore.Core.BLL.Repositories.Plugins;
 using Dna.NetCore.Core.CommandProcessing;
 using Dna.NetCore.Core.Common;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Dna.NetCore.Core.BLL.Services.Common
+namespace Dna.NetCore.Core.BLL.Services.Plugins
 {
-    public partial class AddressType_CrudServices : IAddressType_CrudServices
+    public partial class Plugin_CrudServices : IPlugin_CrudServices
     {
         #region Private Fields
 
-        private readonly IAddressType_Queries _queries;
-        private readonly IAddressTypeRepository _repository;
-        private readonly IAddressTypeMapper _mapper;
+        private readonly IPlugin_Queries _queries;
+        private readonly IPluginRepository _repository;
+        private readonly IPluginMapper _mapper;
         private readonly ICommandBus _commandBus;
         private readonly IDateTimeAdapter _dateTimeAdapter;
 
@@ -24,14 +24,13 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region ctor
 
-        public AddressType_CrudServices(IAddressType_Queries queries, 
-                                    IAddressTypeRepository repository,
-                                    IAddressTypeMapper mapper,
+        public Plugin_CrudServices(IPlugin_Queries plugin_Queries,
+                                    IPluginRepository repository,
+                                    IPluginMapper mapper,
                                     ICommandBus commandBus,
-                                    IDateTimeAdapter dateTimeAdapter
-                                    )
+                                    IDateTimeAdapter dateTimeAdapter)
         {
-            _queries = queries;
+            _queries = plugin_Queries;
             _repository = repository;
             _mapper = mapper;
             _commandBus = commandBus;
@@ -42,19 +41,19 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region CRUD Methods
 
-        public virtual void Add(AddressTypeCmd cmd, string userName, out CustomMessage customMessage)
+        public virtual void Add(PluginCmd cmd, string userName, out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
             if (cmd == null)
             {
                 customMessage1.IsErrorCondition = true;
-                customMessage1.Message = " -->> AddressType_CrudServices.Add(cmd) - ArgumentNullException";
+                customMessage1.Message = " -->> Plugin_CrudServices.Add(cmd) - ArgumentNullException";
             }
             else if (string.IsNullOrEmpty(userName))
             {
                 customMessage1.IsErrorCondition = true;
-                customMessage1.Message = " -->> AddressType_CrudServices.Add(cmd, userName) - IsNullOrEmpty(userName)";
+                customMessage1.Message = " -->> Plugin_CrudServices.Add(cmd, userName) - IsNullOrEmpty(userName)";
             }
             else
             {
@@ -66,7 +65,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
                 {
                     customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
                     customMessage1.IsErrorCondition = true;
-                    customMessage1.Message = " -->> AddressType_CrudServices.Add(cmd, userName) | Update(cmd, userName) - null returned";
+                    customMessage1.Message = " -->> Plugin_CrudServices.Add(cmd, userName) | Update(cmd, userName) - NullReferenceException: customMessage1";
                 }
             }
 
@@ -75,28 +74,28 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             return;
         }
 
-        public virtual void Delete(AddressTypeDto dto, string userName, out CustomMessage customMessage)
+        public virtual void Delete(PluginDto dto, string userName, out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
             if (dto == null)
             {
                 customMessage1.IsErrorCondition = true;
-                customMessage1.Message = " -->> AddressType_CrudServices.Delete() - ArgumentNullException";
+                customMessage1.Message = " -->> Plugin_CrudServices.Delete() - ArgumentNullException";
             }
             else if (string.IsNullOrEmpty(userName))
             {
                 customMessage1.IsErrorCondition = true;
-                customMessage1.Message = " -->> AddressType_CrudServices.Delete(cmd, userName) - IsNullOrEmpty(userName)";
+                customMessage1.Message = " -->> Plugin_CrudServices.Delete(cmd, userName) - IsNullOrEmpty(userName)";
             }
             else
             {
-                AddressTypeCmd cmd = _queries.GetCmd(dto.Id);
+                PluginCmd cmd = _queries.GetCmd(dto.Id);
 
                 if (cmd == null)
                 {
                     customMessage1.IsErrorCondition = true;
-                    customMessage1.Message += " -->> AddressType_CrudServices.Delete(cmd, userName) | _claim_Queries.GetCmd(dto.Id) - null returned";
+                    customMessage1.Message += " -->> Plugin_CrudServices.Delete(cmd, userName) | _securityToken_Queries.GetCmd(dto.Id) - NullReferenceException: PluginCmd";
                 }
                 else
                 {
@@ -108,7 +107,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
                     {
                         customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
                         customMessage1.IsErrorCondition = true;
-                        customMessage1.Message = " -->> AddressType_CrudServices.Delete(cmd, userName) | Update(cmd, userName) - returned null CustomMessage";
+                        customMessage1.Message = " -->> Plugin_CrudServices.Delete(cmd, userName) | Update(cmd, userName) - NullReferenceException: customMessage1";
                     }
                 }
             }
@@ -118,19 +117,19 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             return;
         }
 
-        public virtual void Update(AddressTypeCmd cmd, string userName, out CustomMessage customMessage)
+        public virtual void Update(PluginCmd cmd, string userName, out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
             if (cmd == null)
             {
                 customMessage1.IsErrorCondition = true;
-                customMessage1.Message = " -->> AddressType_CrudServices.Update(cmd) - ArgumentNullException";
+                customMessage1.Message = " -->> Plugin_CrudServices.Update(cmd) - ArgumentNullException";
             }
             else if (string.IsNullOrEmpty(userName))
             {
                 customMessage1.IsErrorCondition = true;
-                customMessage1.Message = " -->> AddressType_CrudServices.Update(cmd, userName) - IsNullOrEmpty(userName)";
+                customMessage1.Message = " -->> Plugin_CrudServices.Update(cmd, userName) - IsNullOrEmpty(userName)";
             }
             else
             {
@@ -142,7 +141,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
                 {
                     customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
                     customMessage1.IsErrorCondition = true;
-                    customMessage1.Message = " -->> AddressType_CrudServices.Update(cmd, userName) | Cmd_Validate(cmd) - null returned";
+                    customMessage1.Message = " -->> Plugin_CrudServices.Update(cmd, userName) | Cmd_Validate(cmd) - NullReferenceException: customMessage1";
                 }
                 else if (!customMessage1.IsErrorCondition ||
                     (customMessage1.MessageDictionary2 != null && customMessage1.MessageDictionary2.Count() == 0))
@@ -153,7 +152,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
                     {
                         customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
                         customMessage1.IsErrorCondition = true;
-                        customMessage1.Message = " -->> AddressType_CrudServices.Update(cmd, userName) | Cmd_Submit(cmd) - null returned";
+                        customMessage1.Message = " -->> Plugin_CrudServices.Update(cmd, userName) | Cmd_Submit(cmd) - NullReferenceException: customMessage1";
                     }
                 }
             }
@@ -167,7 +166,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region Helper Methods
 
-        private CustomMessage Cmd_Validate(AddressTypeCmd cmd)
+        private CustomMessage Cmd_Validate(PluginCmd cmd)
         {
             CustomMessage customMessage = null;
 
@@ -175,7 +174,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             {
                 customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
                 customMessage.IsErrorCondition = true;
-                customMessage.Message = " -->> AddressType_CrudServices.Cmd_Validate(cmd) = ArgumentNullException";
+                customMessage.Message = " -->> Plugin_CrudServices.Cmd_Validate(cmd) = NullReferenceException: customMessage";
             }
             else
             {
@@ -185,21 +184,21 @@ namespace Dna.NetCore.Core.BLL.Services.Common
                 {
                     customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
                     customMessage.IsErrorCondition = true;
-                    customMessage.Message = " -->> AddressType_CrudServices.Cmd_Validate(cmd) | _commandBus.Validate(cmd) = null returned";
+                    customMessage.Message = " -->> Plugin_CrudServices.Cmd_Validate(cmd) | _commandBus.Validate(cmd) = null returned";
                 }
             }
 
             return customMessage;
         }
 
-        private CustomMessage Cmd_Submit(AddressTypeCmd cmd)
+        private CustomMessage Cmd_Submit(PluginCmd cmd)
         {
             CustomMessage customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
             if (cmd == null)
             {
                 customMessage.IsErrorCondition = true;
-                customMessage.Message = " -->> AddressType_CrudServices.Cmd_Submit(cmd) - ArgumentNullException";
+                customMessage.Message = " -->> Plugin_CrudServices.Cmd_Submit(cmd) - ArgumentNullException";
             }
             else
             {
@@ -209,36 +208,31 @@ namespace Dna.NetCore.Core.BLL.Services.Common
                 {
                     customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
                     customMessage.IsErrorCondition = true;
-                    customMessage.Message = " -->> AddressType_CrudServices.Cmd_Submit(cmd) - commandBus.Submit(cmd) - null returned";
+                    customMessage.Message = " -->> Plugin_CrudServices.Cmd_Submit(cmd) - commandBus.Submit(cmd) - NullReferenceException: customMessage";
                 }
             }
 
             return customMessage;
         }
 
-        public virtual AddressTypeCmd Cmd_Create(string userName, string stateOrProvinceAbbreviation, out CustomMessage customMessage)
+        public virtual PluginCmd Cmd_Create(string userName, out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
-            AddressTypeCmd cmd = null;
+            PluginCmd cmd = null;
 
             if (string.IsNullOrEmpty(userName))
             {
                 customMessage1.IsErrorCondition = true;
-                customMessage1.Message = "AddressTypeCrudServices.Cmd_Create() - ArgumentNullException('userName')";
-            }
-            else if (string.IsNullOrEmpty(stateOrProvinceAbbreviation))
-            {
-                customMessage1.IsErrorCondition = true;
-                customMessage1.Message = "AddressTypeCrudServices.Cmd_reae() - ArgumentNullException('stateOrProvinceAbbreviation')";
+                customMessage1.Message = "PluginCrudServices.Cmd_Create() - ArgumentNullException('userName')";
             }
             else
             {
-                AddressType dao = _repository.Create(out customMessage1);
+                Plugin dao = _repository.Create(out customMessage1);
 
                 if (dao == null)
                 {
                     customMessage1.IsErrorCondition = true;
-                    customMessage1.Message = "AddressTypeCrudServices.Cmd_Create() |  _repository.Create() - NullReferenceException('dao')";
+                    customMessage1.Message = "PluginCrudServices.Cmd_Create() |  _repository.Create() - NullReferenceException('dao')";
                 }
                 else
                 {
@@ -247,11 +241,11 @@ namespace Dna.NetCore.Core.BLL.Services.Common
                     if (cmd == null)
                     {
                         customMessage1.IsErrorCondition = true;
-                        customMessage1.Message = "AddressTypeCrudServices.Cmd_Create() |  _repository.Create() - NullReferenceException('cmd')";
+                        customMessage1.Message = "PluginCrudServices.Cmd_Create() |  _repository.Create() - NullReferenceException('cmd')";
                     }
                     else
                     {
-                        cmd = Cmd_SetDefaultPropertyValues(cmd, userName, stateOrProvinceAbbreviation);
+                        cmd = Cmd_SetDefaultPropertyValues(cmd, userName);
                     }
                 }
             }
@@ -261,7 +255,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             return cmd;
         }
 
-        public virtual AddressTypeCmd Cmd_SetDefaultPropertyValues(AddressTypeCmd cmd, string userName, string stateOrProvinceAbbreviation)
+        public virtual PluginCmd Cmd_SetDefaultPropertyValues(PluginCmd cmd, string userName)
         {
             if (cmd == null)
                 return null;
@@ -276,7 +270,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             return cmd;
         }
 
-        private AddressTypeCmd SetAddProperties(AddressTypeCmd cmd, string userName)
+        private PluginCmd SetAddProperties(PluginCmd cmd, string userName)
         {
             if (cmd != null)
             {
@@ -287,10 +281,11 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             return cmd;
         }
 
-        private AddressTypeCmd SetDeleteProperties(AddressTypeCmd cmd, string userName)
+        private PluginCmd SetDeleteProperties(PluginCmd cmd, string userName)
         {
             if (cmd != null)
             {
+                // POLICY: branch logic to set entity.IsDeleted or to execute IDbSet<>.Remove(TEntity entity);
                 cmd.IsDeleted = true;
                 cmd.IsActive = false;
                 cmd = SetUpdateProperties(cmd, userName);
@@ -298,7 +293,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             return cmd;
         }
 
-        private AddressTypeCmd SetUpdateProperties(AddressTypeCmd cmd, string userName)
+        private PluginCmd SetUpdateProperties(PluginCmd cmd, string userName)
         {
             if (cmd != null)
             {
@@ -309,5 +304,6 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         }
 
         #endregion
+
     }
 }

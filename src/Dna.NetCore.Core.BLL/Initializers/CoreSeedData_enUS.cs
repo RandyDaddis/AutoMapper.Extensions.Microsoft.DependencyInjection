@@ -1,8 +1,10 @@
-﻿using Dna.NetCore.Core.BLL.Constants;
+﻿using Dna.NetCore.Core.BLL.Commands.Plugins;
+using Dna.NetCore.Core.BLL.Constants;
 using Dna.NetCore.Core.BLL.Entities.Common;
 using Dna.NetCore.Core.BLL.Initializers.Common;
 using Dna.NetCore.Core.BLL.Initializers.Localization;
 using Dna.NetCore.Core.BLL.Services.Common;
+using Dna.NetCore.Core.BLL.Services.Plugins;
 using Dna.NetCore.Core.Common;
 using Dna.NetCore.Core.Initializers;
 using System.Collections.Generic;
@@ -108,7 +110,7 @@ namespace Dna.NetCore.Core.BLL.Initializers
 
             PluginCmd cmd = _pluginCrudServices.Cmd_Create(_userName, out customMessage);
 
-            if ((PluginCmd)cmd == null)
+            if (cmd == null)
             {
                 addFailureCount++;
             }

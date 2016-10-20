@@ -1,12 +1,12 @@
-﻿using Dna.NetCore.Core.BLL.EntityMetadata.Common;
+﻿using Dna.NetCore.Core.BLL.EntityMetadata.Plugins;
 using System.ComponentModel.DataAnnotations;
 
-namespace Dna.NetCore.Core.BLL.DataTransferObjects.Common
+namespace Dna.NetCore.Core.BLL.DataTransferObjects.Plugins
 {
 #if NET462
-    [MetadataType(typeof(AddressType_Metadata))]
+    [MetadataType(typeof(PluginSummaryMetadata))]
 #endif
-    public partial class AddressTypeDto : BaseDataTransferObject
+    public partial class PluginSummary : BaseDataTransferObjectSummary
     {
         public virtual int Id { get; set; }
         public virtual string SystemName { get; set; }
