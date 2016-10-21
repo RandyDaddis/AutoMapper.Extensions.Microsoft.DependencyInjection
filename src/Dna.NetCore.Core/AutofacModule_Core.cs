@@ -1,6 +1,7 @@
 ﻿using Dna.NetCore.Core.Common;
 using Autofac;
 using System.Reflection;
+using Dna.NetCore.Core.CommandProcessing;
 
 namespace Dna.NetCore.Core
 {
@@ -24,6 +25,9 @@ namespace Dna.NetCore.Core
         private void RegisterComponents(ContainerBuilder builder)
         {
             Assembly assembly = Assembly.Load(new AssemblyName("Dna.NetCore.Core"));
+
+            builder.RegisterType<CommandBus>().As<ICommandBus>()
+                .InstancePerLifetimeScope();
 
             builder.RegisterType<DateTimeAdapter>()
                 .As<IDateTimeAdapter>()

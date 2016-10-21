@@ -1,4 +1,7 @@
-﻿using Autofac;
+﻿using AspNetCore.NetCore.WebApp.Initializers;
+using Autofac;
+using Dna.NetCore.Core.CommandProcessing;
+using Dna.NetCore.Core.Initializers;
 
 namespace AspNetCore.NetCore.WebApp
 {
@@ -32,6 +35,14 @@ namespace AspNetCore.NetCore.WebApp
             //    .InstancePerLifetimeScope();
 
             //builder.RegisterType<Logger>().As<ILogger>()
+            //    .InstancePerLifetimeScope();
+
+            builder.RegisterType<SeedData>();
+            //builder.RegisterType<SeedData>().As<ISeedData>()
+            //    .InstancePerLifetimeScope();
+            //builder.Register(t => new SeedData())
+            //    .InstancePerLifetimeScope();
+            //builder.Register(() => new SeedData())
             //    .InstancePerLifetimeScope();
         }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dna.AspNet4.MVC.Areas.Administration.Controllers.Api
 {
-    [Area("Administration")]
+    //[Area("Administration")]
     [Route("API/[controller]")]
     public class SeedDataController : Controller
     {
