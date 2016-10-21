@@ -101,7 +101,8 @@ namespace AspNetCore.NetCore.WebApp
             app.UseMvc(routes =>
             {
                 routes.MapAreaRoute("administration_route", "Administration",
-                    "Administration/{controller}/{action}/{id?}");                routes.MapRoute(
+                    "Administration/API/{controller}/{action}/{id?}");
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });

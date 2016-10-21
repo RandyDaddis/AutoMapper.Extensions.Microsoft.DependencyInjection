@@ -25,7 +25,7 @@ namespace AspNetCore.NetCore.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                string url = "http://localhost:60213/administration/api/SeedData/get/" + vm.Password;
+                string url = "http://localhost:60213/Administration/API/SeedData/Get/" + vm.Password;
                 using (HttpClient httpClient = new HttpClient())
                 {
                     httpClient.BaseAddress = new Uri(url);

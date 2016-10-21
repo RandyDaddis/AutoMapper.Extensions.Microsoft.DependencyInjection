@@ -1,5 +1,6 @@
 ﻿using AspNetCore.NetCore.WebApp.Areas.Administration.ViewModels;
 using AspNetCore.NetCore.WebApp.Initializers;
+using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
 using Dna.NetCore.Core.Common;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -7,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Dna.AspNet4.MVC.Areas.Administration.Controllers.Api
 {
-    [Area("administration")]
-    [Route("api/[controller]")]
+    [Area("Administration")]
+    [Route("API/[controller]")]
     public class SeedDataController : Controller
     {
         #region Private Fields
@@ -73,10 +74,18 @@ namespace Dna.AspNet4.MVC.Areas.Administration.Controllers.Api
         //    });
         //}
 
-        private async Task<IActionResult> Get(string password)
+        [HttpGet("AddressType")]
+        public IActionResult GetAddressType()
         {
-            if (string.IsNullOrEmpty(password) || password != "password")
-                return BadRequest("invalid password");
+            AddressTypeDto dto = new AddressTypeDto() { SystemName = "test", DisplayName = "test" };
+            return Ok(dto);
+        }
+
+        [HttpGet]
+        public async Task<SeedDataModel> Get(string password)
+        {
+            //if (string.IsNullOrEmpty(password) || password != "password")
+            //    return BadRequest("invalid password");
 
             SeedDataModel model = new SeedDataModel();
             CustomMessage customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
@@ -101,10 +110,10 @@ namespace Dna.AspNet4.MVC.Areas.Administration.Controllers.Api
 
                     model.Results.Add(result);
                 }
-                return new ObjectResult(model); // success
+                //return new ObjectResult(model); // success
             }
-
-            return Ok(new { model = model });  // something went wrong
+            return model;
+            //return Ok(new { model = model });  // something went wrong
         }
 
         private async Task<CustomMessage> Seed()
