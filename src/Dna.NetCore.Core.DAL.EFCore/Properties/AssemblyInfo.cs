@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard")]
-[assembly: AssemblyProduct("NetCore.Core.DAL.EFCore")]
+[assembly: AssemblyProduct("Dna.NetCore.Core.DAL.EFCore")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -16,4 +16,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5c6e2f75-6656-4f3f-b062-8de2779437b7")]
+[assembly: Guid("d51c6e98-429c-4cb3-a188-d6876536bb13")]
