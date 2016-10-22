@@ -29,12 +29,12 @@ namespace AspNetCore.NetCore.WebApp.Initializers
 
         public CustomMessage Execute()
         {
-            CoreSeedData_enUS();
+            ExecuteCoreSeedData_enUS();
 
             return _customMessage;
         }
 
-        private void CoreSeedData_enUS()
+        private void ExecuteCoreSeedData_enUS()
         {
             CustomMessage seedMessages = _coreSeedData.Execute(_administratorUserName);
 
