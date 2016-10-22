@@ -59,8 +59,8 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             if (wherePredicate == null)
                 return null;
 
-            IQueryable<SystemSetting> daos = _repository.GetWhere(wherePredicate)
-                                     .OrderBy(a => a.SystemName) ;
+            IQueryable<SystemSetting> daos = _repository.GetWhere(wherePredicate);
+                                     //.OrderBy(a => a.SystemName) ;
             return daos;
         }
 

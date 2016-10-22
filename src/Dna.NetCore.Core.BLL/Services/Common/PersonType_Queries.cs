@@ -40,8 +40,8 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         public virtual IQueryable<PersonType> GetList(Expression<Func<PersonType, bool>> wherePredicate)
         {
-            IQueryable<PersonType> daos = _repository.GetWhere(wherePredicate)
-                                     .OrderBy(a => a.DisplayName);
+            IQueryable<PersonType> daos = _repository.GetWhere(wherePredicate);
+                                     //.OrderBy(a => a.DisplayName);
             return daos;
         }
 

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Collections.Specialized;
 
 namespace Dna.NetCore.Core.BLL.Entities.Common
 {
-	public partial class OfficeOpenXmlStuff
+    public partial class OfficeOpenXmlStuff
 	{
 		#region Private Fields
 
@@ -16,7 +15,7 @@ namespace Dna.NetCore.Core.BLL.Entities.Common
 		public string FileExtension_Get_OfficeOpenXmlContentType(string fileExtension)
 		{
 			string contentType = "";
-			StringDictionary x = new StringDictionary();
+			Dictionary<string,string> x = new Dictionary<string,string>();
 			x.Add("docx", "application/vnd.openxmlformatsofficedocument.wordprocessingml.document.main+xml");
 			x.Add("doc", "application/vnd.openxmlformatsofficedocument.wordprocessingml.document.main+xml");
 			x.Add("xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml");
