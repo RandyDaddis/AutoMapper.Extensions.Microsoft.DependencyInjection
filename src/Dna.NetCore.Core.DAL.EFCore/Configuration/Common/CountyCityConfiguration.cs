@@ -1,5 +1,6 @@
 ﻿using Dna.NetCore.Core.BLL.Entities.Common;
 using Dna.NetCore.Core.DAL.EFCore.Configuration.Temporary.Cocowalla;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Configuration.Common
@@ -15,10 +16,12 @@ namespace Dna.NetCore.Core.DAL.EFCore.Configuration.Common
             builder.HasKey(p => new { p.CountyId, p.CityId });
             builder.HasOne(pt => pt.County)
                    .WithMany(p => p.CountiesCities)
-                   .HasForeignKey(pt => pt.CountyId);
+                   .HasForeignKey(pt => pt.CountyId)
+                   .OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(pt => pt.City)
                    .WithMany(t => t.CountiesCities)
-                   .HasForeignKey(pt => pt.CityId);
+                   .HasForeignKey(pt => pt.CityId)
+                   .OnDelete(DeleteBehavior.Restrict);
 
 
             // EF 6
