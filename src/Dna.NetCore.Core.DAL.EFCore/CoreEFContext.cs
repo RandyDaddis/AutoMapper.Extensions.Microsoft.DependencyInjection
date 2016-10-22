@@ -14,8 +14,12 @@ namespace Dna.NetCore.Core.DAL.EFCore
         #region ctor
 
         public CoreEFContext()
-        {
-        }
+        { }
+
+        //public CoreEFContext(DbContextOptions<CoreEFContext> options) // cref: https://github.com/aspnet/Docs/blob/master/aspnet/data/ef-mvc/intro/samples/cu-final/Data/SchoolContext.cs
+        //    : base(options)
+        //{
+        //}
 
         #endregion
 

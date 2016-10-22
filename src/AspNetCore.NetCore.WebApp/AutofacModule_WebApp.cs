@@ -1,6 +1,9 @@
-﻿using AspNetCore.NetCore.WebApp.Initializers;
+﻿using AspNetCore.NetCore.WebApp.Data;
+using AspNetCore.NetCore.WebApp.Initializers;
 using Autofac;
+using Dna.NetCore.Core;
 using Dna.NetCore.Core.CommandProcessing;
+using Dna.NetCore.Core.DAL.EFCore;
 using Dna.NetCore.Core.Initializers;
 
 namespace AspNetCore.NetCore.WebApp
@@ -26,13 +29,13 @@ namespace AspNetCore.NetCore.WebApp
         {
             // TODO
 
-            //ApplicationDbContext applicationDbContext = new ApplicationDbContext();
-            //builder.Register(ctx => applicationDbContext)
-            //    .InstancePerLifetimeScope();
+            ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+            builder.Register(ctx => applicationDbContext)
+                .InstancePerLifetimeScope();
 
-            //builder.RegisterType<DatabaseFactory<ApplicationDbContext>>()
-            //    .As<IDatabaseFactory<ApplicationDbContext>>()
-            //    .InstancePerLifetimeScope();
+            builder.RegisterType<DatabaseFactory<ApplicationDbContext>>()
+                .As<IDatabaseFactory<ApplicationDbContext>>()
+                .InstancePerLifetimeScope();
 
             //builder.RegisterType<Logger>().As<ILogger>()
             //    .InstancePerLifetimeScope();

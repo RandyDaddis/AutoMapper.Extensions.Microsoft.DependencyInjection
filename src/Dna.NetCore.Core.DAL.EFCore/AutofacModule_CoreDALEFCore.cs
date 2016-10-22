@@ -24,6 +24,21 @@ namespace Dna.NetCore.Core.DAL.EFCore
         {
             var assembly = Assembly.Load(new AssemblyName("Dna.NetCore.Core.DAL.EFCore"));
 
+            //builder.RegisterAssemblyTypes(assembly)
+            //    .Where(t => t.Name.EndsWith("_MessageBuilder"))
+            //    .AsImplementedInterfaces()
+            //    .InstancePerLifetimeScope();
+
+            //builder.RegisterAssemblyTypes(assembly)
+            //    .Where(t => t.Name.EndsWith("_MessageHandler"))
+            //    .AsImplementedInterfaces()
+            //    .InstancePerLifetimeScope();
+
+            builder.RegisterAssemblyTypes(assembly)
+                .Where(t => t.Name.EndsWith("_Handler"))
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
+
             builder.RegisterAssemblyTypes(assembly)
                 .Where(t => t.Name.EndsWith("Repository"))
                 .WithParameter("databaseFactory", new DatabaseFactory<CoreEFContext>())

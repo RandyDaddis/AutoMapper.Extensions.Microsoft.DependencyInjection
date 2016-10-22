@@ -52,11 +52,6 @@ namespace Dna.NetCore.Core.BLL
                 .InstancePerLifetimeScope();
 
             builder.RegisterAssemblyTypes(assembly)
-                .Where(t => t.Name.EndsWith("Mapper"))
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope();
-
-            builder.RegisterAssemblyTypes(assembly)
                 .Where(t => t.Name.EndsWith("Queries"))
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();

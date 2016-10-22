@@ -5,6 +5,7 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
 using Dna.NetCore.Core.DAL.AutoMapper;
+using Dna.NetCore.Core.DAL.EFCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -48,6 +49,9 @@ namespace AspNetCore.NetCore.WebApp
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<CoreEFContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -106,6 +110,8 @@ namespace AspNetCore.NetCore.WebApp
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            // TODO: https://github.com/aspnet/Docs/blob/master/aspnet/data/ef-mvc/intro/samples/cu-final/Data/DbInitializer.cs
+            // DbInitializer.Initialize(context);
         }
 
         private AutofacServiceProvider ConfigureAutofacContainer(IServiceCollection services)
