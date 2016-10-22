@@ -11,39 +11,23 @@ using System.Threading.Tasks;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories
 {
-    public abstract class RepositoryBase<T, U>
+    public abstract class RepositoryBase<T>
         where T : class
-        where U : DbContext, new()
     {
         #region Private Fields
 
-        private U _dataContext;
         //private readonly IDbSet<T> _dbset;  // IDbSet not implemented in .NET Core 1.0.1
         private readonly Microsoft.EntityFrameworkCore.DbSet<T> _dbset;
+        private readonly CoreEFContext _context;
 
         #endregion
 
         #region ctor
 
-        protected RepositoryBase(IDatabaseFactory<U> databaseFactory)
+        protected RepositoryBase(CoreEFContext context)
         {
-            DatabaseFactory = databaseFactory;
-            _dbset = DataContext.Set<T>();
-        }
-
-        #endregion
-
-        #region Protected Properties
-
-        protected IDatabaseFactory<U> DatabaseFactory
-        {
-            get;
-            private set;
-        }
-
-        protected U DataContext
-        {
-            get { return _dataContext ?? (_dataContext = DatabaseFactory.Get()); }
+            _context = context;
+            _dbset = _context.Set<T>();
         }
 
         #endregion
@@ -203,7 +187,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             try
             {
                 _dbset.Attach(entity);
-                _dataContext.Entry(entity).State = EntityState.Modified;
+                _context.Entry(entity).State = EntityState.Modified;
             }
             catch (SqlException exception)
             {
@@ -259,7 +243,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
 
             try
             {
-                numberOfChanges = _dataContext.SaveChanges();
+                numberOfChanges = _context.SaveChanges();
             }
             catch (SqlException exception)
             {
@@ -288,7 +272,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             try
             {
                 _dbset.Add(dao);
-                return await _dataContext.SaveChangesAsync();
+                return await _context.SaveChangesAsync();
             }
             catch (SqlException exception)
             {
@@ -313,7 +297,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
         //        T dao = _dbset.Find(id);  // .Find will be published in .NET Core 1.1
         //        if ((T)dao != null)
         //            _dbset.Remove(dao);
-        //        return await _dataContext.SaveChangesAsync();
+        //        return await _context.SaveChangesAsync();
         //    }
         //    catch (SqlException exception)
         //    {
@@ -336,8 +320,8 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             try
             {
                 _dbset.Attach(dao);
-                _dataContext.Entry(dao).State = EntityState.Modified;
-                return await _dataContext.SaveChangesAsync();
+                _context.Entry(dao).State = EntityState.Modified;
+                return await _context.SaveChangesAsync();
             }
             catch (SqlException exception)
             {
@@ -394,7 +378,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
             try
             {
-                return await _dataContext.SaveChangesAsync();
+                return await _context.SaveChangesAsync();
             }
             catch (SqlException exception)
             {

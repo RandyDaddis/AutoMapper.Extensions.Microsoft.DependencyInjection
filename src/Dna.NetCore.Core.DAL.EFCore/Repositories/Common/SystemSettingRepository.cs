@@ -5,18 +5,18 @@ using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Common
 {
-    public class CountryRepository : RepositoryBase<Country>, ICountryRepository
+    public class SystemSettingRepository : RepositoryBase<SystemSetting>, ISystemSettingRepository
     {
-        public CountryRepository(CoreEFContext context)
+        public SystemSettingRepository(CoreEFContext context)
             : base(context)
-        { }
-
-        // TODO: refactor back to RepositoryBase when EF Core supports create()
-        public virtual Country Create(out CustomMessage customMessage)
+        {
+        }
+        public virtual SystemSetting Create(out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
-            Country dao = new Country();
+            // TODO: refactor back to RepositoryBase_CM_T when EF Core supports create()
+            SystemSetting dao = new SystemSetting();
             customMessage = customMessage1;
             return dao;
         }

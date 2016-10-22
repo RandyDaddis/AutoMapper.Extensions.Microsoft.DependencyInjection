@@ -5,10 +5,10 @@ using Dna.NetCore.Core.Common;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories
 {
-    public class TimeZoneRepository : RepositoryBase<dao.TimeZone, CoreEFContext>, ITimeZoneRepository
+    public class TimeZoneRepository : RepositoryBase<dao.TimeZone>, ITimeZoneRepository
     {
-        public TimeZoneRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
-            : base(databaseFactory)
+        public TimeZoneRepository(CoreEFContext context)
+            : base(context)
         { }
 
         // TODO: refactor back to RepositoryBase when EF Core supports create()

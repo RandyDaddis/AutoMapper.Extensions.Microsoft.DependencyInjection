@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Common
 {
-    public class CountyRepository : RepositoryBase<County, CoreEFContext>, ICountyRepository
+    public class CountyRepository : RepositoryBase<County>, ICountyRepository
     {
-        public CountyRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
-            : base(databaseFactory)
+        public CountyRepository(CoreEFContext context)
+            : base(context)
         { }
 
         // TODO: refactor back to RepositoryBase when EF Core supports create()

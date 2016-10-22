@@ -78,7 +78,7 @@ namespace Dna.NetCore.Core.Exceptions
                                         + SqlError_SqlServerName(error)
                                         + SqlError_Provider(error)
                                         + SqlError_SqlServer_ErrorCode(error);
-
+                    // TODO: refactor to guard against existing key in dictionary
                     customMessage.MessageDictionary1.Add(" -->>SqlError: ", message);
                 }
             }

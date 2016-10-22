@@ -29,13 +29,13 @@ namespace AspNetCore.NetCore.WebApp
         {
             // TODO
 
-            ApplicationDbContext applicationDbContext = new ApplicationDbContext();
-            builder.Register(ctx => applicationDbContext)
-                .InstancePerLifetimeScope();
+            //ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+            //builder.Register(ctx => applicationDbContext)
+            //    .InstancePerLifetimeScope();
 
-            builder.RegisterType<DatabaseFactory<ApplicationDbContext>>()
-                .As<IDatabaseFactory<ApplicationDbContext>>()
-                .InstancePerLifetimeScope();
+            //builder.RegisterType<DatabaseFactory<ApplicationDbContext>>()
+            //    .As<IDatabaseFactory<ApplicationDbContext>>()
+            //    .InstancePerLifetimeScope();
 
             //builder.RegisterType<Logger>().As<ILogger>()
             //    .InstancePerLifetimeScope();

@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Common
 {
-    public class MimeTypeRepository : RepositoryBase<MimeType, CoreEFContext>, IMimeTypeRepository
+    public class MimeTypeRepository : RepositoryBase<MimeType>, IMimeTypeRepository
     {
-        public MimeTypeRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
-            : base(databaseFactory)
+        public MimeTypeRepository(CoreEFContext context)
+            : base(context)
         { }
 
         // TODO: refactor back to RepositoryBase when EF Core supports create()

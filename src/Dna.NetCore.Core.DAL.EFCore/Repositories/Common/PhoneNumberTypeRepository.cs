@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Common
 {
-    public class PhoneNumberTypeRepository : RepositoryBase<PhoneNumberType, CoreEFContext>, IPhoneNumberTypeRepository
+    public class PhoneNumberTypeRepository : RepositoryBase<PhoneNumberType>, IPhoneNumberTypeRepository
     {
-        public PhoneNumberTypeRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
-            : base(databaseFactory)
+        public PhoneNumberTypeRepository(CoreEFContext context)
+            : base(context)
         {}
 
         // TODO: refactor back to RepositoryBase when EF Core supports create()

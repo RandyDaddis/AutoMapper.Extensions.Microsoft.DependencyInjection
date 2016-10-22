@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Plugins
 {
-    public class PluginRepository : RepositoryBase<Plugin, CoreEFContext>, IPluginRepository
+    public class PluginRepository : RepositoryBase<Plugin>, IPluginRepository
     {
-        public PluginRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
-            : base(databaseFactory)
+        public PluginRepository(CoreEFContext context)
+            : base(context)
         {
         }
         // TODO: refactor back to RepositoryBase when EF Core supports create()

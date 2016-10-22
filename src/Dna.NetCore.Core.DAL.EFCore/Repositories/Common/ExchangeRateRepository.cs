@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Common
 {
-    public class ExchangeRateRepository : RepositoryBase<ExchangeRate, CoreEFContext>, IExchangeRateRepository
+    public class ExchangeRateRepository : RepositoryBase<ExchangeRate>, IExchangeRateRepository
     {
-        public ExchangeRateRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
-            : base(databaseFactory)
+        public ExchangeRateRepository(CoreEFContext context)
+            : base(context)
         { }
 
         // TODO: refactor back to RepositoryBase when EF Core supports create()

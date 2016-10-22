@@ -41,14 +41,8 @@ namespace Dna.NetCore.Core.DAL.EFCore
 
             builder.RegisterAssemblyTypes(assembly)
                 .Where(t => t.Name.EndsWith("Repository"))
-                .WithParameter("databaseFactory", new DatabaseFactory<CoreEFContext>())
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
-
-            builder.RegisterType<DatabaseFactory<CoreEFContext>>()
-                .As<IDatabaseFactory<CoreEFContext>>()
-                .InstancePerLifetimeScope();
-
         }
 
         #endregion

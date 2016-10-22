@@ -12,6 +12,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Configuration.Common
             //ToTable("Core_CountyCity", "dbo");
 
             // EF Core
+            builder.HasKey(p => new { p.CountyId, p.CityId });
             builder.HasOne(pt => pt.County)
                    .WithMany(p => p.CountiesCities)
                    .HasForeignKey(pt => pt.CountyId);

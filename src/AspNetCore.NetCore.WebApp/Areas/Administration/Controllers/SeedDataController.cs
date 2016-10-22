@@ -81,8 +81,8 @@ namespace Dna.AspNet4.MVC.Areas.Administration.Controllers.Api
             return Ok(dto);
         }
 
-        [HttpGet]
-        public async Task<SeedDataModel> Get(string password)
+        [HttpGet("Seed")]
+        public async Task<SeedDataModel> Seed()
         {
             //if (string.IsNullOrEmpty(password) || password != "password")
             //    return BadRequest("invalid password");
@@ -90,7 +90,7 @@ namespace Dna.AspNet4.MVC.Areas.Administration.Controllers.Api
             SeedDataModel model = new SeedDataModel();
             CustomMessage customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
-            customMessage = await Seed();
+            customMessage = await Execute();
 
             if (customMessage != null && customMessage.MessageDictionary1 != null && customMessage.MessageDictionary2 != null)
             {
@@ -116,7 +116,7 @@ namespace Dna.AspNet4.MVC.Areas.Administration.Controllers.Api
             //return Ok(new { model = model });  // something went wrong
         }
 
-        private async Task<CustomMessage> Seed()
+        private async Task<CustomMessage> Execute()
         {
             // Workaround due to synchronous nature of SeedData.cs
             return await Task.Run(() =>

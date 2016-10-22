@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Common
 {
-    public class AddressTypeRepository : RepositoryBase<AddressType, CoreEFContext>, IAddressTypeRepository
+    public class AddressTypeRepository : RepositoryBase<AddressType>, IAddressTypeRepository
     {
-        public AddressTypeRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
-            : base(databaseFactory)
+        public AddressTypeRepository(CoreEFContext context)
+            : base(context)
         { }
 
         // TODO: refactor back to RepositoryBase when EF Core supports create()

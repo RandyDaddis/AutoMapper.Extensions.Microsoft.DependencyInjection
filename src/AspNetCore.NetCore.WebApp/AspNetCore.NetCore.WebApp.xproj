@@ -14,6 +14,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
+    <ApplicationInsightsResourceId>/subscriptions/064834a5-4e22-4419-8d3e-4318d52b5df2/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/AspNetCore.NetCore.WebApp</ApplicationInsightsResourceId>
   </PropertyGroup>
   <ItemGroup>
     <DnxInvisibleContent Include="bower.json" />

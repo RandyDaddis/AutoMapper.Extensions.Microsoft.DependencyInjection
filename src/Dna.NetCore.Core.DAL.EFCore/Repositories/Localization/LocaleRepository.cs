@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.DAL.EFCore.Repositories.Localization
 {
-    public class LocaleRepository : RepositoryBase<Locale, CoreEFContext>, ILocaleRepository
+    public class LocaleRepository : RepositoryBase<Locale>, ILocaleRepository
     {
-        public LocaleRepository(IDatabaseFactory<CoreEFContext> databaseFactory)
-            : base(databaseFactory)
+        public LocaleRepository(CoreEFContext context)
+            : base(context)
         {}
 
         // TODO: refactor back to RepositoryBase when EF Core supports create()
