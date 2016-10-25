@@ -55,7 +55,7 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Plugins
                     {
                         Plugin plugin = _repository.Add(dao, out customMessage);
 
-                        if (customMessage.IsErrorCondition == false && (Plugin)plugin != null)
+                        if (customMessage.IsErrorCondition == false && plugin != null)
                         {
                             numberOfChanges = _repository.SaveChanges(out customMessage);
 
