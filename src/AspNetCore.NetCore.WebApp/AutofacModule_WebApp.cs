@@ -20,14 +20,33 @@ namespace AspNetCore.NetCore.WebApp
 
         #region methods
 
-        protected override void Load(ContainerBuilder builder)  // DEVNOTE: Load() is executed via Startup.ConfigureAutofacContainer() | _container = builder.Build();
+        protected override void Load(ContainerBuilder builder)  // DEVNOTE: Load() is executed via Startup.DI_AutofacContainer_Configure() | _container = _builder.Build();
         {
             RegisterComponents(builder);
         }
 
         private static void RegisterComponents(ContainerBuilder builder)
         {
+            // TODO
+
+            //ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+            //builder.Register(ctx => applicationDbContext)
+            //    .InstancePerLifetimeScope();
+
+            //builder.RegisterType<DatabaseFactory<ApplicationDbContext>>()
+            //    .As<IDatabaseFactory<ApplicationDbContext>>()
+            //    .InstancePerLifetimeScope();
+
+            //builder.RegisterType<Logger>().As<ILogger>()
+            //    .InstancePerLifetimeScope();
+
             builder.RegisterType<SeedData>();
+            //builder.RegisterType<SeedData>().As<ISeedData>()
+            //    .InstancePerLifetimeScope();
+            //builder.Register(t => new SeedData())
+            //    .InstancePerLifetimeScope();
+            //builder.Register(() => new SeedData())
+            //    .InstancePerLifetimeScope();
         }
 
         #endregion

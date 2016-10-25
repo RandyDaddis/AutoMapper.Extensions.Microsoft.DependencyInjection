@@ -55,13 +55,13 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Plugins
                     {
                         Plugin plugin = _repository.Add(dao, out customMessage);
 
-                        //if (customMessage.IsErrorCondition == false && plugin != null)
-                        //{
+                        if (customMessage.IsErrorCondition == false && plugin != null)
+                        {
                             numberOfChanges = _repository.SaveChanges(out customMessage);
 
                             if (numberOfChanges > 0)
                                 customMessage.MessageDictionary1.Add("AddId", plugin.Id.ToString());
-                        //}
+                        }
                     }
                     else
                     {
