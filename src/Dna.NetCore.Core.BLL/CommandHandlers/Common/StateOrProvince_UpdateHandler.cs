@@ -53,14 +53,14 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
                 {
                     if (cmd.Id == 0)
                     {
-                        StateOrProvince stateOrProvince = _repository.Add(dao, out customMessage);
+                        StateOrProvince dto2 = _repository.Add(dao, out customMessage);
 
-                        if (customMessage.IsErrorCondition == false && stateOrProvince != null)
+                        if (customMessage.IsErrorCondition == false) // && dto2 != null) // temporary workaround until .NET Core 2.0 is analyzed
                         {
                             numberOfChanges = _repository.SaveChanges(out customMessage);
 
                             if (numberOfChanges > 0)
-                                customMessage.MessageDictionary1.Add("AddId", stateOrProvince.Id.ToString());
+                                customMessage.MessageDictionary1.Add("AddId", "1"); // dto2.Id.ToString()); // temporary workaround until .NET Core 2.0 is analyzed
                         }
                     }
                     else
@@ -75,7 +75,7 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
                                 _repository.Update(dao, out customMessage);
 
                             if (!customMessage.IsErrorCondition)
-                                customMessage.MessageDictionary1.Add("DeleteId", dao.Id.ToString());
+                                customMessage.MessageDictionary1.Add("DeleteId", "1"); // dao.Id.ToString());
                         }
                         else
                         {
