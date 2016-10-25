@@ -59,7 +59,13 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             // DEVNOTE: exceptions are logged at the exception handler and the controller levels
 
             customMessage = customMessage1;
-
+            //var e = dao as Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry;
+            ////var i = dao as Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalClrEntityEntry;
+            //Type type = dao.GetType();
+            ////var d = dao as type;
+            //T temp = (T)dao;
+            ////return i.Entity as T;
+            //return (T)dao;
             return dao as T;
         }
 
