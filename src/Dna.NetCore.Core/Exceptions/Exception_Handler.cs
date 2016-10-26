@@ -24,6 +24,7 @@ namespace Dna.NetCore.Core.Exceptions
         public static CustomMessage Handle(this Exception exception)
         {
             CustomMessage customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
+            customMessage.IsErrorCondition = true;
 
             customMessage.Message = Get_StackTrace(exception);
 
@@ -46,8 +47,6 @@ namespace Dna.NetCore.Core.Exceptions
 
             customMessage.Message += message;
 
-            customMessage.IsErrorCondition = true;
-
             if (customMessage != null && !string.IsNullOrEmpty(customMessage.Message))
                 Log.Write(message);
 
@@ -57,7 +56,12 @@ namespace Dna.NetCore.Core.Exceptions
 
         public static CustomMessage ParseData(this Exception exception, CustomMessage customMessage)
         {
-            customMessage = customMessage ?? new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
+            if (customMessage == null)
+            {
+                customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
+                customMessage.IsErrorCondition = true;
+                customMessage.Message = "-->>Exception_Handler.ParseData() - customMessage parameter was null";
+            }
 
             foreach (DictionaryEntry de in exception.Data)
                 customMessage.MessageDictionary1.Add(de.Key.ToString(), de.Value.ToString());
@@ -67,22 +71,28 @@ namespace Dna.NetCore.Core.Exceptions
 
         public static CustomMessage ParseInnerException(this Exception exception, CustomMessage customMessage)
         {
-            customMessage = customMessage ?? new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
+            if (customMessage == null)
+            {
+                customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
+                customMessage.IsErrorCondition = true;
+                customMessage.Message = "-->>Exception_Handler.ParseInnerException() - customMessage parameter was null";
+            }
 
             if (exception.InnerException != null)
             {
                 var innerException = exception.InnerException;
+                // recursive innerExceptions
                 while (innerException != null)
                 {
-                        customMessage.Message += " -->>InnerException: ";
+                    customMessage.Message += " -->>InnerException: ";
+                    if (!string.IsNullOrEmpty(innerException.Message))
+                        customMessage.Message += innerException.Message;
 
-                        if (!string.IsNullOrEmpty(innerException.Message))
-                            customMessage.Message += innerException.Message;
-
-                        if (innerException.InnerException != null)
+                    // loop if needed to process innerException
+                    if (innerException.InnerException != null)
                             innerException = innerException.InnerException;
-                        else
-                            break;
+                    else
+                        break;
                 }
             }
 
@@ -97,6 +107,7 @@ namespace Dna.NetCore.Core.Exceptions
         public static string Get_StackTrace (this Exception exception)
         {
             string stackTrace = exception.StackTrace;
+
             return stackTrace;
         }
 
@@ -116,6 +127,7 @@ namespace Dna.NetCore.Core.Exceptions
         public static string Get_TargetSite_DeclaringType_ClassName(this Exception exception)
         {
             string name = exception.TargetSite.DeclaringType.FullName;
+        
             return name;
         }
 
@@ -131,6 +143,7 @@ namespace Dna.NetCore.Core.Exceptions
         public static string Get_TargetSite_MethodName(this Exception exception)
         {
             string name = exception.TargetSite.Name;
+
             return name;
         }
 
@@ -141,8 +154,7 @@ namespace Dna.NetCore.Core.Exceptions
         ///// <returns>member types:Constructor, Event, Field, Method, Property, TypeInfo, Custom, NestedType, All</returns>
         //public static string Get_TargetSite_MemberType(this Exception exception)
         //{
-        //    string s = System.Enum.GetName(MemberTypes, exception.TargetSite.MemberType.GetType as object);
-
+            //string s = System.Enum.GetName(MemberTypes, exception.TargetSite.MemberType.GetType as object);
         //    return s;
         //}
 #endif
