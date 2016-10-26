@@ -12,19 +12,20 @@ namespace Dna.NetCore.Core.Exceptions
         public static CustomMessage Handle(this ArgumentException exception)
         {
             CustomMessage customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
+            customMessage.IsErrorCondition = true;
 
             customMessage = ParseInnerException(exception, customMessage);
 
             string message = " -->>ArgumentException_HResult: "
                                 + exception.HResult.ToString()
                                 + " "
+                                + "ParamName" + exception.ParamName
+                                + " "
                                 + exception.Message ?? ""
                                 + " "
                                 + customMessage.Message ?? "";
 
             customMessage.Message = message;
-
-            customMessage.IsErrorCondition = true;
 
             if (customMessage != null && !string.IsNullOrEmpty(customMessage.Message))
                 Log.Write(message);
@@ -39,20 +40,20 @@ namespace Dna.NetCore.Core.Exceptions
             if (exception.InnerException != null)
             {
                 var innerException = exception.InnerException;
+                // recursive innerExceptions
                 while (innerException != null)
                 {
                     customMessage.Message += " -->>InnerException: ";
-
                     if (!string.IsNullOrEmpty(innerException.Message))
                         customMessage.Message += innerException.Message;
 
+                    // loop if needed to process innerException
                     if (innerException.InnerException != null)
                         innerException = innerException.InnerException;
                     else
                         break;
                 }
             }
-
             return customMessage;
         }
 
