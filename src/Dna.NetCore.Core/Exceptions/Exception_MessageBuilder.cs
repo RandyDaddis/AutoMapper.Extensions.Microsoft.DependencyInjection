@@ -42,7 +42,7 @@ namespace Dna.NetCore.Core.Exceptions
         {
             _customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
-            if ((Exception)exception == null)
+            if (exception == null)
             {
                 _customMessage.Message = ".Parse(exception) - NullReferenceException";
             }

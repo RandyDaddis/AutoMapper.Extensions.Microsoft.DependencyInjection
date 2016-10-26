@@ -32,7 +32,7 @@ namespace Dna.NetCore.Core.Exceptions
         {
             CustomMessage customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
-            if ((ArgumentException)exception == null)
+            if (exception == null)
             {
                 customMessage.Message = "ArgumentException_MessageHandler.Execute(exception) - NullReferenceException";
                 customMessage = AddMessagePrefix(exception, customMessage);
@@ -52,7 +52,7 @@ namespace Dna.NetCore.Core.Exceptions
         {
             CustomMessage customMessage1 = customMessage ?? new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
-            if ((ArgumentException)exception == null)
+            if (exception == null)
             {
                 customMessage1.Message = "ArgumentException_MessageHandler.ParseMessage() - ArgumentNullException";
             }

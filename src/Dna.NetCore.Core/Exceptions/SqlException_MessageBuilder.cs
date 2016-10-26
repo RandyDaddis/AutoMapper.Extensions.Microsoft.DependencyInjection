@@ -29,7 +29,7 @@ namespace Dna.NetCore.Core.Exceptions
         {
             _customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
 
-            if ((SqlException)_exception == null)
+            if (_exception == null)
             {
                 _customMessage.Message = ".Parse(exception) - NullReferenceException";
             }
@@ -63,30 +63,30 @@ namespace Dna.NetCore.Core.Exceptions
         private void GetClientConnectionId()
         {
             _customMessage.Message = _customMessage.Message
-                                        + " ClientConnectionId: "
-                                        + _exception.ClientConnectionId.ToString();
+                                    + " ClientConnectionId: "
+                                    + _exception.ClientConnectionId.ToString();
         }
 
         private void GetServer()
         {
             _customMessage.Message = _customMessage.Message
-                                        + " | Server: "
-                                        + _exception.Server;
+                                    + " | Server: "
+                                    + _exception.Server;
         }
 
         private void GetProcedure()
         {
             _customMessage.Message = _customMessage.Message 
-                                        + " | Procedure: " 
-                                        + _exception.Procedure;
+                                    + " | Procedure: " 
+                                    + _exception.Procedure;
         }
 
         private void GetSqlErrorCollection()
         {
             if (_exception.Errors != null && _exception.Errors.Count > 0)
                 _customMessage.Message = _customMessage.Message
-                                            + " | SQL ErrorCollection: "
-                                            + _sqlErrorCollection_MessageBuilder.Parse(_exception.Errors);
+                                        + " | SQL ErrorCollection: "
+                                        + _sqlErrorCollection_MessageBuilder.Parse(_exception.Errors);
         }
 
         #endregion
