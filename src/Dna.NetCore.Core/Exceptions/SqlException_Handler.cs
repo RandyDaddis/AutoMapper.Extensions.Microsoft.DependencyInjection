@@ -18,10 +18,11 @@ namespace Dna.NetCore.Core.Exceptions
         public static CustomMessage Handle(this SqlException exception)
         {
             CustomMessage customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
+            customMessage.IsErrorCondition = true;
 
             customMessage = ParseSqlErrorCollection(exception, customMessage);
 
-            string message = " -->>SqlException: "
+            string message = " -->>SqlException_Handler: "
                                 + HResult(exception)
                                 + SqlException_SqlServerProvider_SeverityLevel(exception)
                                 + SqlException_ClientConnectionId(exception)
@@ -37,8 +38,6 @@ namespace Dna.NetCore.Core.Exceptions
                                 + customMessage.Message ?? "";
 
             customMessage.Message = message;
-
-            customMessage.IsErrorCondition = true;
 
             if (customMessage != null && !string.IsNullOrEmpty(customMessage.Message))
                 Log.Write(message);
@@ -64,12 +63,27 @@ namespace Dna.NetCore.Core.Exceptions
         /// <returns>CustomMessage</returns>
         public static CustomMessage ParseSqlErrorCollection(this SqlException exception, CustomMessage customMessage)
         {
-            customMessage = customMessage ?? new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
+            if (customMessage == null)
+            {
+                customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
+                customMessage.IsErrorCondition = true;
+                customMessage.Message = exception.Message;
+            }
 
             if (exception.Errors != null && exception.Errors.Count > 0)
             {
+                string keyPrefix = " -->>SqlException.Error";
+                int keyIndex = 0;
+                string key = keyPrefix + keyIndex.ToString();
                 foreach (SqlError error in exception.Errors)
                 {
+                    // set next key
+                    while (customMessage.MessageDictionary1.ContainsKey(key))
+                    {
+                        keyIndex++;
+                        key = keyPrefix + keyIndex.ToString();
+                    }
+                    // set message
                     string message = SqlError_SqlServerProvider_SeverityLevel(error)
                                         + SqlError_ErrorLineNumber(error)
                                         + SqlError_Message(error)
@@ -78,8 +92,8 @@ namespace Dna.NetCore.Core.Exceptions
                                         + SqlError_SqlServerName(error)
                                         + SqlError_Provider(error)
                                         + SqlError_SqlServer_ErrorCode(error);
-                    // TODO: refactor to guard against existing key in dictionary
-                    customMessage.MessageDictionary1.Add(" -->>SqlError: ", message);
+                    // add message to dictionary
+                    customMessage.MessageDictionary1.Add(key, message);
                 }
             }
 
