@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Dna.NetCore.Core.Common;
+﻿using Dna.NetCore.Core.Common;
+using Dna.NetCore.Core.DAL.EFCore.Exceptions;
 using Dna.NetCore.Core.Exceptions;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -37,11 +38,15 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
         public virtual T Add(T entity, out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
-            object dao = null;
-
             try
             {
-                dao = _dbset.Add(entity);
+                var entry = _dbset.Add(entity);
+                customMessage = customMessage1;
+                return entry.Entity;
+            }
+            catch (DbUpdateException exception)
+            {
+                customMessage1 = exception.Handle();
             }
             catch (SqlException exception)
             {
@@ -60,7 +65,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
 
             customMessage = customMessage1;
 
-            return dao as T;
+            return null;
         }
 
         // Not implemented in EF Core 1.0.1
