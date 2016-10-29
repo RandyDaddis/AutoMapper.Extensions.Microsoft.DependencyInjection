@@ -8,7 +8,7 @@ using Dna.NetCore.Core.DAL.EFCore;
 namespace Dna.NetCore.Core.DAL.EFCore.Migrations
 {
     [DbContext(typeof(CoreEFContext))]
-    [Migration("20161022163240_InitialCreate")]
+    [Migration("20161029145659_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

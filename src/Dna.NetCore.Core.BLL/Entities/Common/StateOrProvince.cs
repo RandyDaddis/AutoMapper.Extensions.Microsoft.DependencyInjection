@@ -44,10 +44,10 @@ namespace Dna.NetCore.Core.BLL.Entities.Common
             set { _counties = value; }
         }
 
-        private ICollection<TimeZone> _timeZones;
-        public virtual ICollection<TimeZone> TimeZones
+        private ICollection<Dna.NetCore.Core.BLL.Entities.Common.TimeZone> _timeZones;
+        public virtual ICollection<Dna.NetCore.Core.BLL.Entities.Common.TimeZone> TimeZones
         {
-            get { return _timeZones ?? (_timeZones = new List<TimeZone>()); }
+            get { return _timeZones ?? (_timeZones = new List<Dna.NetCore.Core.BLL.Entities.Common.TimeZone>()); }
             set { _timeZones = value; }
         }
 
