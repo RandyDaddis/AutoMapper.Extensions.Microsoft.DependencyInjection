@@ -12,10 +12,14 @@ namespace Dna.NetCore.Core.DAL.EFCore.Configuration.Common
             //// Table and Schema Names
             //ToTable("Core_StateOrProvince", "dbo");
 
+            //// WARNING: cascade delete = true in both county and city 
+            //// will cause cyclical update exceptions
+            // TODO: cleanup orphans after deleting StateOrProvince
+
             // EF Core
             builder.HasOne(p => p.Country).WithMany(p => p.StateOrProvinces).HasForeignKey(s => s.CountryId).OnDelete(DeleteBehavior.Cascade);
-            builder.HasMany(d => d.Cities).WithOne().OnDelete(DeleteBehavior.Cascade);
-            builder.HasMany(d => d.Counties).WithOne().OnDelete(DeleteBehavior.Cascade);
+            builder.HasMany(d => d.Cities).WithOne().OnDelete(DeleteBehavior.Restrict);
+            builder.HasMany(d => d.Counties).WithOne().OnDelete(DeleteBehavior.Restrict);
             builder.HasMany(d => d.TimeZones).WithOne().OnDelete(DeleteBehavior.Restrict);
 
             // EF 6
@@ -25,8 +29,6 @@ namespace Dna.NetCore.Core.DAL.EFCore.Configuration.Common
             //   .HasForeignKey(s => s.CountryId)
             //   .WillCascadeOnDelete(true);
 
-            //// WARNING: cascade delete = true in both county and city 
-            //// will cause cyclical update exceptions
             //HasMany(d => d.Cities).WithOptional().WillCascadeOnDelete(true);
             //HasMany(d => d.Counties).WithOptional().WillCascadeOnDelete(false);
             //HasMany(d => d.TimeZones).WithOptional().WillCascadeOnDelete(false);
