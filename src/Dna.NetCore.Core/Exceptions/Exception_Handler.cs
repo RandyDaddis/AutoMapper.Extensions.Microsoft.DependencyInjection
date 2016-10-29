@@ -3,6 +3,7 @@ using Dna.NetCore.Core.Infrastructure.Logging;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Dna.NetCore.Core.Exceptions
 {
@@ -11,7 +12,7 @@ namespace Dna.NetCore.Core.Exceptions
         #region Methods
 
 #if NET462
-         TODO: .NET Core implementation
+        // TODO: .NET Core implementation
         ///// <summary>
         /////// 
         /////// // WARNING: System.Exception.TargetSite is not implemented in System.Runtime, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
@@ -154,7 +155,7 @@ namespace Dna.NetCore.Core.Exceptions
         ///// <returns>member types:Constructor, Event, Field, Method, Property, TypeInfo, Custom, NestedType, All</returns>
         //public static string Get_TargetSite_MemberType(this Exception exception)
         //{
-            //string s = System.Enum.GetName(MemberTypes, exception.TargetSite.MemberType.GetType as object);
+            //string s = System.Enum.GetName(MemberTypes, exception.TargetSite.MemberType.GetType() as object);
         //    return s;
         //}
 #endif
