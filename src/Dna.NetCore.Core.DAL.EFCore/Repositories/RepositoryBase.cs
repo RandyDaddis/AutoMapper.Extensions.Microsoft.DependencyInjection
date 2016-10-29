@@ -60,11 +60,8 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             {
                 customMessage1 = exception.Handle();
             }
-
             // DEVNOTE: exceptions are logged at the exception handler and the controller levels
-
             customMessage = customMessage1;
-
             return null;
         }
 
@@ -96,13 +93,13 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
         public virtual IEnumerable<T> Delete(Expression<Func<T, bool>> where, out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
-            IEnumerable<object> objects = null;
-
             try
             {
-                objects = _dbset.Where<T>(where).AsEnumerable();
-                foreach (T obj in objects)
-                    _dbset.Remove(obj);
+                var entities = _dbset.Where<T>(where).AsEnumerable();
+                foreach (T entity in entities)
+                    _dbset.Remove(entity);
+                customMessage = customMessage1;
+                return entities;
             }
             catch (SqlException exception)
             {
@@ -117,7 +114,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
                 customMessage1 = exception.Handle();
             }
             customMessage = customMessage1;
-            return objects as IEnumerable<T>;
+            return null;
         }
 
         /// <summary>
@@ -154,21 +151,22 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
                 customMessage1 = exception.Handle();
             }
             customMessage = customMessage1;
-            return dao as T;
+            return dao.Entity;
         }
 
         public virtual IEnumerable<T> Remove(Expression<Func<T, bool>> where, out CustomMessage customMessage)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
-            IEnumerable<object> objects = null;
             try
             {
-                objects = _dbset.Where<T>(where).AsEnumerable();
-                foreach (T obj in objects)
+                var entities = _dbset.Where<T>(where).AsEnumerable();
+                foreach (T entity in entities)
                 {
-                    _dbset.Attach(obj);
-                    _dbset.Remove(obj);
+                    _dbset.Attach(entity);
+                    _dbset.Remove(entity);
                 }
+                customMessage = customMessage1;
+                return entities;
             }
             catch (SqlException exception)
             {
@@ -183,7 +181,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
                 customMessage1 = exception.Handle();
             }
             customMessage = customMessage1;
-            return objects as IEnumerable<T>;
+            return null;
         }
 
         public virtual void Update(T entity, out CustomMessage customMessage)
@@ -245,7 +243,6 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
             int numberOfChanges = 0;
-
             try
             {
                 numberOfChanges = _context.SaveChanges();
@@ -273,7 +270,6 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
         public virtual async Task<int> AddAsync(T dao)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
-
             try
             {
                 _dbset.Add(dao);
@@ -407,10 +403,10 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
         public virtual IQueryable<T> GetAll()
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
-            IQueryable<object> dao = null;
             try
             {
-                dao = _dbset;
+                var queryable = _dbset.AsQueryable();
+                return queryable;
             }
             catch (SqlException exception)
             {
@@ -424,16 +420,16 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             {
                 customMessage1 = exception.Handle();
             }
-            return dao as IQueryable<T>;
+            return null;
         }
 
         public virtual T Get(Expression<Func<T, bool>> where)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
-            object dao = null;
             try
             {
-                dao = _dbset.Where(where).FirstOrDefault<T>();
+                var dao = _dbset.Where(where).FirstOrDefault<T>();
+                return dao;
             }
             catch (SqlException exception)
             {
@@ -447,16 +443,16 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             {
                 customMessage1 = exception.Handle();
             }
-            return dao as T;
+            return null;
         }
 
         public virtual IQueryable<T> GetWhere(Expression<Func<T, bool>> where)
         {
             CustomMessage customMessage1 = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
-            IQueryable<object> dao = null;
             try
             {
-                dao = _dbset.Where(where);
+                var queryable = _dbset.Where(where);
+                return queryable;
             }
             catch (SqlException exception)
             {
@@ -470,7 +466,7 @@ namespace Dna.NetCore.Core.DAL.EFCore.Repositories
             {
                 customMessage1 = exception.Handle();
             }
-            return dao as IQueryable<T>;
+            return null;
         }
 
         #endregion
