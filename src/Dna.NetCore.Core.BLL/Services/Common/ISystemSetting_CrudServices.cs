@@ -1,4 +1,4 @@
-﻿using Dna.NetCore.Core.BLL.Entities;
+﻿using Dna.NetCore.Core.BLL.Entities.Common;
 using Dna.NetCore.Core.Common;
 using System.Collections.Generic;
 
