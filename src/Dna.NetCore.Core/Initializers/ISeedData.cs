@@ -1,6 +1,9 @@
-﻿namespace Dna.NetCore.Core.Initializers
+﻿using Dna.NetCore.Core.Common;
+
+namespace Dna.NetCore.Core.Initializers
 {
-    public class ISeedData
+    public interface ISeedData
     {
+        //CustomMessage Execute();
     }
 }

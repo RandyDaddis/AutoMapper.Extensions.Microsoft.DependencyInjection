@@ -102,7 +102,6 @@ namespace Dna.NetCore.Core.BLL.Initializers.Common
         {
             List<CurrencyCmd> list = new List<CurrencyCmd>();
 
-            list.Add(GenerateCurrency("Please Select", "N/A", "N/A", "N/A", 1));
             list.Add(GenerateCurrency("US Dollar ($)", "USD", "en-US", "", 1));
             list.Add(GenerateCurrency("Euro (€)", "EUR", "", string.Format("{0}0.00", "\u20ac"), 1));
             list.Add(GenerateCurrency("Argentine Peso ($)", "ARS", "", "", 1));

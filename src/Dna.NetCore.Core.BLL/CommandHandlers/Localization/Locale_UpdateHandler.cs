@@ -1,10 +1,10 @@
 ﻿using Dna.NetCore.Core.BLL.Commands.Localization;
 using Dna.NetCore.Core.BLL.Entities.Localization;
-using Dna.NetCore.Core.BLL.Repositories.Localization;
 using Dna.NetCore.Core.BLL.Mappers.Localization;
+using Dna.NetCore.Core.BLL.Repositories.Localization;
 using Dna.NetCore.Core.CommandProcessing;
-using System.Collections.Generic;
 using Dna.NetCore.Core.Common;
+using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.BLL.CommandHandlers.Localization
 {
@@ -53,14 +53,14 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Localization
                 {
                     if (cmd.Id == 0)
                     {
-                        Locale dto2 = _repository.Add(dao, out customMessage);
+                        Locale dao2 = _repository.Add(dao, out customMessage);
 
-                        if (customMessage.IsErrorCondition == false) // && dto2 != null) // temporary workaround until .NET Core 2.0 is analyzed
+                        if (customMessage.IsErrorCondition == false) // && dao2 != null) // temporary workaround until .NET Core 2.0 is analyzed
                         {
                             numberOfChanges = _repository.SaveChanges(out customMessage);
 
                             if (numberOfChanges > 0)
-                                customMessage.MessageDictionary1.Add("AddId", "1"); // dto2.Id.ToString()); // temporary workaround until .NET Core 2.0 is analyzed
+                                customMessage.MessageDictionary1.Add("AddId", "1"); // dao2.Id.ToString()); // temporary workaround until .NET Core 2.0 is analyzed
                         }
                     }
                     else

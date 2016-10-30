@@ -60,7 +60,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
                 return null;
 
             IQueryable<SystemSetting> daos = _repository.GetWhere(wherePredicate);
-                                     //.OrderBy(a => a.SystemName) ;
+                                                        //.OrderBy(a => a.SystemName) ;
             return daos;
         }
 

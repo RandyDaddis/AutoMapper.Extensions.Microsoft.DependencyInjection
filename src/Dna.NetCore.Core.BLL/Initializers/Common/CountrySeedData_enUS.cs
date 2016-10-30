@@ -1314,7 +1314,6 @@ namespace Dna.NetCore.Core.BLL.Initializers.Common
 
             List<CityCmd> list = new List<CityCmd>();
 
-            //list.Add(GenerateCity("Please Select", "N/A", stateAbbreviation));   // would end up with duplicate "Please Select" display names for each City // KendoUI <select> will add this option automatically
             list.Add(GenerateCity("Abbottstown", "Adams", stateAbbreviation));
             list.Add(GenerateCity("Arendtsville", "Adams", stateAbbreviation));
             list.Add(GenerateCity("Bendersville", "Adams", stateAbbreviation));

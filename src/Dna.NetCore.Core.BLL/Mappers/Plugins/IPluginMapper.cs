@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-using Dna.NetCore.Core.BLL.Commands.Plugins;
+﻿using Dna.NetCore.Core.BLL.Commands.Plugins;
 using Dna.NetCore.Core.BLL.DataTransferObjects.Plugins;
 using Dna.NetCore.Core.BLL.Entities.Plugins;
+using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.BLL.Mappers.Plugins
 {
-	/// <exception cref="InvalidOperationException"></exception>
-	/// <exception cref="AutoMapperConfigurationException"></exception>
-	/// <exception cref="AutoMapperMappingException"></exception>
-	/// <exception cref="NullReferenceException"></exception>
-	/// <exception cref="ArgumentNullException"></exception>
-	/// <exception cref="ArgumentException"></exception>
-	public interface IPluginMapper
+    /// <exception cref="InvalidOperationException"></exception>
+    /// <exception cref="AutoMapperConfigurationException"></exception>
+    /// <exception cref="AutoMapperMappingException"></exception>
+    /// <exception cref="NullReferenceException"></exception>
+    /// <exception cref="ArgumentNullException"></exception>
+    /// <exception cref="ArgumentException"></exception>
+    public interface IPluginMapper
 	{
         /// <summary>
         ///     Execute a mapping from the source object to a new destination object.

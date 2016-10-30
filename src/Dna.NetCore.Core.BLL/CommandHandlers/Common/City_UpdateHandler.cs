@@ -1,9 +1,9 @@
 ﻿using Dna.NetCore.Core.BLL.Commands.Common;
 using Dna.NetCore.Core.BLL.Entities.Common;
-using Dna.NetCore.Core.BLL.Repositories.Common;
 using Dna.NetCore.Core.BLL.Mappers.Common;
-using Dna.NetCore.Core.Common;
+using Dna.NetCore.Core.BLL.Repositories.Common;
 using Dna.NetCore.Core.CommandProcessing;
+using Dna.NetCore.Core.Common;
 using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
@@ -53,14 +53,14 @@ namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
                 {
                     if (cmd.Id == 0)
                     {
-                        City dto2 = _repository.Add(dao, out customMessage);
+                        City dao2 = _repository.Add(dao, out customMessage);
 
-                        if (customMessage.IsErrorCondition == false) // && dto2 != null) // temporary workaround until .NET Core 2.0 is analyzed
+                        if (customMessage.IsErrorCondition == false) // && dao2 != null) // temporary workaround until .NET Core 2.0 is analyzed
                         {
                             numberOfChanges = _repository.SaveChanges(out customMessage);
 
                             if (numberOfChanges > 0)
-                                customMessage.MessageDictionary1.Add("AddId", "1"); // dto2.Id.ToString()); // temporary workaround until .NET Core 2.0 is analyzed
+                                customMessage.MessageDictionary1.Add("AddId", "1"); // dao2.Id.ToString()); // temporary workaround until .NET Core 2.0 is analyzed
                         }
                     }
                     else

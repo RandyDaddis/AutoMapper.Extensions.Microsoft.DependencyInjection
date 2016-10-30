@@ -1,12 +1,12 @@
-﻿using Dna.NetCore.Core.Common;
-using Dna.NetCore.Core.BLL.Commands.Common;
+﻿using Dna.NetCore.Core.BLL.Commands.Common;
 using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
-using Dna.NetCore.Core.BLL.Repositories.Common;
+using Dna.NetCore.Core.BLL.Entities.Common;
 using Dna.NetCore.Core.BLL.Mappers.Common;
+using Dna.NetCore.Core.BLL.Repositories.Common;
+using Dna.NetCore.Core.CommandProcessing;
+using Dna.NetCore.Core.Common;
 using System.Collections.Generic;
 using System.Linq;
-using Dna.NetCore.Core.CommandProcessing;
-using Dna.NetCore.Core.BLL.Entities.Common;
 
 namespace Dna.NetCore.Core.BLL.Services.Common
 {

@@ -34,7 +34,6 @@ namespace Dna.NetCore.Core.CommandProcessing
                     customMessage.Message = "CommandBus_Dna.Execute() | handler.Execute(command) - null returned";
                 }
             }
-
             return customMessage;
         }
 
@@ -59,7 +58,6 @@ namespace Dna.NetCore.Core.CommandProcessing
                     customMessage.Message = "CommandBus_Dna.Validate() | handler.Validate(command) - null returned";
                 }
             }
-
             return customMessage;
         }
     }

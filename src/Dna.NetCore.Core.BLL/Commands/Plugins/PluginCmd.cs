@@ -1,4 +1,6 @@
-﻿using Dna.NetCore.Core.Commands;
+﻿using Dna.NetCore.Core.BLL.EntityMetadata.Plugins;
+using Dna.NetCore.Core.Commands;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dna.NetCore.Core.BLL.Commands.Plugins
 {

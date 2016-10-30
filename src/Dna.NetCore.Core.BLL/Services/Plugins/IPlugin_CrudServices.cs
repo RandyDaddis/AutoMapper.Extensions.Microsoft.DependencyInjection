@@ -1,7 +1,6 @@
 ﻿using Dna.NetCore.Core.BLL.Commands.Plugins;
 using Dna.NetCore.Core.BLL.DataTransferObjects.Plugins;
 using Dna.NetCore.Core.Common;
-using System.Collections.Generic;
 
 namespace Dna.NetCore.Core.BLL.Services.Plugins
 {

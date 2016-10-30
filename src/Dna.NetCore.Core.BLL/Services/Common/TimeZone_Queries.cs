@@ -1,14 +1,14 @@
-﻿using dao = Dna.NetCore.Core.BLL.Entities.Common;
-using Dna.NetCore.Core.BLL.Repositories.Common;
-using System.Linq.Expressions;
-using System.Linq;
-using System;
-using Dna.NetCore.Core.BLL.Commands.Common;
-using Dna.NetCore.Core.BLL.Mappers.Common;
+﻿using Dna.NetCore.Core.BLL.Commands.Common;
+using Dna.NetCore.Core.BLL.Constants;
 using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
 using Dna.NetCore.Core.BLL.Entities;
-using Dna.NetCore.Core.BLL.Constants;
+using common = Dna.NetCore.Core.BLL.Entities.Common;
+using Dna.NetCore.Core.BLL.Mappers.Common;
+using Dna.NetCore.Core.BLL.Repositories.Common;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace Dna.NetCore.Core.BLL.Services.Common
 {
@@ -37,13 +37,13 @@ namespace Dna.NetCore.Core.BLL.Services.Common
 
         #region Methods
 
-        public virtual TimeZoneDto Get(Expression<Func<dao.TimeZone, bool>> wherePredicate)
+        public virtual TimeZoneDto Get(Expression<Func<common.TimeZone, bool>> wherePredicate)
         {
             if (wherePredicate == null)
                 return null;
             TimeZoneDto dto = null;
 
-            dao.TimeZone dao = _repository.Get(wherePredicate);
+            common.TimeZone dao = _repository.Get(wherePredicate);
             if (dao != null)
                 dto = _mapper.GetDtoFromDao(dao);
 
@@ -56,7 +56,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
                 return null;
             TimeZoneCmd cmd = null;
 
-            dao.TimeZone dao = _repository.Get(a => a.DisplayName == displayName);
+            common.TimeZone dao = _repository.Get(a => a.DisplayName == displayName);
             if (dao != null)
                 cmd = _mapper.GetCmdFromDao(dao);
 
@@ -78,7 +78,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         {
             string timeZoneInfoId = "";
 
-            dao.SystemSetting systemSetting = _systemSettingQueries.Get(j => j.SystemName == SystemSettingConstants.Core_TimeZoneInfoId);
+            common.SystemSetting systemSetting = _systemSettingQueries.Get(j => j.SystemName == SystemSettingConstants.Core_TimeZoneInfoId);
             if (systemSetting != null)
                 timeZoneInfoId = systemSetting.StringValue;
 
@@ -90,12 +90,12 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             return GetList(a => a.IsActive == isActive && a.IsDeleted == isDeleted);
         }
 
-        public virtual IEnumerable<TimeZoneDto> GetList(Expression<Func<dao.TimeZone, bool>> wherePredicate)
+        public virtual IEnumerable<TimeZoneDto> GetList(Expression<Func<common.TimeZone, bool>> wherePredicate)
         {
             if (wherePredicate == null)
                 return null;
 
-            IEnumerable<dao.TimeZone> daos = _repository.GetWhere(wherePredicate)
+            IEnumerable<common.TimeZone> daos = _repository.GetWhere(wherePredicate)
                                                         .OrderBy(a => a.TimeZoneInfoId)
                                                         .ToList();
             IEnumerable<TimeZoneDto> dtos = _mapper.GetDtosFromDaos(daos);
@@ -103,12 +103,12 @@ namespace Dna.NetCore.Core.BLL.Services.Common
             return dtos;
         }
 
-        public virtual IEnumerable<TimeZone_Summary> GetSummaryList(Expression<Func<dao.TimeZone, bool>> wherePredicate)
+        public virtual IEnumerable<TimeZone_Summary> GetSummaryList(Expression<Func<common.TimeZone, bool>> wherePredicate)
         {
             if (wherePredicate == null)
                 return null;
 
-            IEnumerable<dao.TimeZone> list = _repository.GetWhere(wherePredicate)
+            IEnumerable<common.TimeZone> list = _repository.GetWhere(wherePredicate)
                                      .OrderBy(a => a.TimeZoneInfoId);
 
             return _mapper.GetSummariesFromDaos(list);

@@ -1,11 +1,11 @@
 ﻿using Dna.NetCore.Core.BLL.Commands.Common;
 using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
-using Dna.NetCore.Core.BLL.Services.Common;
 using Dna.NetCore.Core.BLL.Resources;
+using Dna.NetCore.Core.BLL.Services.Common;
 using Dna.NetCore.Core.CommandProcessing;
+using Dna.NetCore.Core.Common;
 using System;
 using System.Collections.Generic;
-using Dna.NetCore.Core.Common;
 
 namespace Dna.NetCore.Core.BLL.CommandHandlers.Common
 {

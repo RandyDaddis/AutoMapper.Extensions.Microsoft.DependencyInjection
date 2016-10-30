@@ -70,6 +70,7 @@ namespace Dna.NetCore.Core.BLL.Services.Common
         {
             return GetList(a => a.IsActive == isActive && a.IsDeleted == isDeleted);
         }
+
         public virtual IEnumerable<AddressTypeDto> GetList(Expression<Func<AddressType, bool>> wherePredicate)
         {
             if (wherePredicate == null)

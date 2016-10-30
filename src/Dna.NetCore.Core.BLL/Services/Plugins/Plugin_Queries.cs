@@ -23,7 +23,7 @@ namespace Dna.NetCore.Core.BLL.Services.Plugins
         #region ctor
 
         public Plugin_Queries(IPluginRepository repository,
-                                    IPluginMapper mapper)
+                              IPluginMapper mapper)
 		{
 			_repository = repository;
             _mapper = mapper;
@@ -66,8 +66,8 @@ namespace Dna.NetCore.Core.BLL.Services.Plugins
                 return null;
 
             IEnumerable<Plugin> daos = _repository.GetWhere(wherePredicate)
-                                    .OrderBy(a => a.DisplayName)
-                                    .ToList();
+                                                  .OrderBy(a => a.DisplayName)
+                                                  .ToList();
             IEnumerable<PluginDto> dtos = _mapper.GetDtosFromDaos(daos);
 
             return dtos;

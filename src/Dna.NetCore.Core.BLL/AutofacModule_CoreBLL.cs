@@ -56,10 +56,6 @@ namespace Dna.NetCore.Core.BLL
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterAssemblyTypes(assembly)
-                .As<ICommand>()
-                .InstancePerLifetimeScope();
-
             builder.RegisterType<CoreSeedData_enUS>();
             builder.RegisterType<CommonSeedData_enUS>();
             builder.RegisterType<CountrySeedData_enUS>();

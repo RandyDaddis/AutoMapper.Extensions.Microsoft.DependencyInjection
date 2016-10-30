@@ -1,9 +1,8 @@
-﻿using dao = Dna.NetCore.Core.BLL.Entities.Common;
-using Dna.NetCore.Core.BLL.Commands.Common;
+﻿using Dna.NetCore.Core.BLL.Commands.Common;
 using Dna.NetCore.Core.BLL.DataTransferObjects.Common;
+using dao = Dna.NetCore.Core.BLL.Entities.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 
 namespace Dna.NetCore.Core.BLL.Services.Common

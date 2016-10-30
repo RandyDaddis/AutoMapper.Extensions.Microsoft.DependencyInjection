@@ -94,17 +94,13 @@ namespace Dna.NetCore.Core.BLL.Initializers
 
         //private void SecuritySeedData()
         //{
-        //    SecuritySeedData_enUS security = new SecuritySeedData_enUS();
-
-        //    CustomMessage seedMessages = security.Seed(_userName);
-
+        //    CustomMessage seedMessages = _securitySeedData.Execute(_userName);
         //    BubbleUpCustomMessageDictionaries(seedMessages);
         //}
 
         private void GeneratePlugin()
         {
             CustomMessage customMessage = new CustomMessage() { MessageDictionary1 = new Dictionary<string, string>(), MessageDictionary2 = new Dictionary<string, string>() };
-
             int addSuccessCount = 0;
             int addFailureCount = 0;
 
@@ -214,6 +210,15 @@ namespace Dna.NetCore.Core.BLL.Initializers
             SystemSetting dao27 = _systemSettingCrudServices.Create(_userName, out customMessage1);
             SystemSetting dao28 = _systemSettingCrudServices.Create(_userName, out customMessage1);
             SystemSetting dao29 = _systemSettingCrudServices.Create(_userName, out customMessage1);
+            SystemSetting dao30 = _systemSettingCrudServices.Create(_userName, out customMessage1);
+            SystemSetting dao31 = _systemSettingCrudServices.Create(_userName, out customMessage1);
+            SystemSetting dao32 = _systemSettingCrudServices.Create(_userName, out customMessage1);
+            SystemSetting dao33 = _systemSettingCrudServices.Create(_userName, out customMessage1);
+            SystemSetting dao34 = _systemSettingCrudServices.Create(_userName, out customMessage1);
+            SystemSetting dao35 = _systemSettingCrudServices.Create(_userName, out customMessage1);
+            SystemSetting dao36 = _systemSettingCrudServices.Create(_userName, out customMessage1);
+            SystemSetting dao37 = _systemSettingCrudServices.Create(_userName, out customMessage1);
+            SystemSetting dao38 = _systemSettingCrudServices.Create(_userName, out customMessage1);
 
             dao1 = _systemSettingCrudServices.SetPropertyValues(dao1, _pluginId, SystemSettingConstants.Core_AddressTypeSystemName, "Address Type", "", "Home");
             dao2 = _systemSettingCrudServices.SetPropertyValues(dao2, _pluginId, SystemSettingConstants.Core_BasePathForDataFiles, "Base Path for Data Files", "", "App_Data");
@@ -232,18 +237,27 @@ namespace Dna.NetCore.Core.BLL.Initializers
             dao15 = _systemSettingCrudServices.SetPropertyValues(dao15, _pluginId, SystemSettingConstants.Core_MimeTypeGroup_TextSystemName, "Text MimeType Group", "", "Text");
             dao16 = _systemSettingCrudServices.SetPropertyValues(dao16, _pluginId, SystemSettingConstants.Core_PhoneNumber_CountryCode, "Default Phone Number Country Code", "", "1");
             dao17 = _systemSettingCrudServices.SetPropertyValues(dao17, _pluginId, SystemSettingConstants.Core_PhoneNumberTypeSystemName, "Default Phone Number Type", "", "CellPhone");
-            dao18 = _systemSettingCrudServices.SetPropertyValues(dao18, _pluginId, SystemSettingConstants.Core_SslIsEnabled, "SSL Is Enabled", "", "", false);
-            dao19 = _systemSettingCrudServices.SetPropertyValues(dao19, _pluginId, SystemSettingConstants.Core_SSLUrl, "SSL URL", "", "");
-            dao20 = _systemSettingCrudServices.SetPropertyValues(dao20, _pluginId, SystemSettingConstants.Core_SystemSettingIsActive, "System Setting Is Active", "", "", true);
-            dao21 = _systemSettingCrudServices.SetPropertyValues(dao21, _pluginId, SystemSettingConstants.Core_TimeZoneInfoId, "Default TimeZoneInfoId", "", "Eastern Standard Time");
-            dao22 = _systemSettingCrudServices.SetPropertyValues(dao22, _pluginId, SystemSettingConstants.Core_Us_ShippingIsAllowed, "USA - Is Shipping Allowed", "", "", true);
-            dao23 = _systemSettingCrudServices.SetPropertyValues(dao23, _pluginId, SystemSettingConstants.Core_US_Taxes_NJ_SalesTaxRate, "Default NJ Sales Tax Rate", "", "", false, 0.06M);
-            dao24 = _systemSettingCrudServices.SetPropertyValues(dao24, _pluginId, SystemSettingConstants.Core_US_Taxes_NY_SalesTaxRate, "Default NY Sales Tax Rate", "", "", false, 0.0825M);
-            dao25 = _systemSettingCrudServices.SetPropertyValues(dao25, _pluginId, SystemSettingConstants.Core_US_Taxes_PA_SalesTaxRate, "Default PA Sales Tax Rate", "", "", false, 0.06M);
-            dao26 = _systemSettingCrudServices.SetPropertyValues(dao26, _pluginId, SystemSettingConstants.Core_US_DefaultState, "USA - Default State Abbreviation", "", "NJ");
-            dao27 = _systemSettingCrudServices.SetPropertyValues(dao27, _pluginId, SystemSettingConstants.Core_US_Taxes_SalesTaxState, "USA - Default Sales Tax State", "", "NJ", false);
-            dao28 = _systemSettingCrudServices.SetPropertyValues(dao28, _pluginId, SystemSettingConstants.Core_US_Taxes_VatIsEnabled, "USA - VAT Is Enabled", "", "", false);
-            dao29 = _systemSettingCrudServices.SetPropertyValues(dao29, _pluginId, SystemSettingConstants.Core_UserName, "Default User Name", "", _userName);
+            dao18 = _systemSettingCrudServices.SetPropertyValues(dao18, _pluginId, SystemSettingConstants.Core_SmtpMailMessageDefaultRecipient, "SMTP MailMessage Default Recipient", "", "");
+            dao19 = _systemSettingCrudServices.SetPropertyValues(dao19, _pluginId, SystemSettingConstants.Core_SmtpHost1, "SMTP Host 1", "", "192.168.1.1");
+            dao20 = _systemSettingCrudServices.SetPropertyValues(dao20, _pluginId, SystemSettingConstants.Core_SmtpHost1Port, "SMTP Host 1 Port", "", "");
+            dao21 = _systemSettingCrudServices.SetPropertyValues(dao21, _pluginId, SystemSettingConstants.Core_SmtpPickupDirectoryLocation, "SMTP Pickup Directory Location", "", "data\\smtp\\send\\");
+            dao22 = _systemSettingCrudServices.SetPropertyValues(dao22, _pluginId, SystemSettingConstants.Core_SmtpUseDefaultCredentials, "SMTP Use Default Credentials", "", "", false);
+            dao23 = _systemSettingCrudServices.SetPropertyValues(dao23, _pluginId, SystemSettingConstants.Core_SmtpUserName, "SMTP User Name", "", "Randy");
+            dao24 = _systemSettingCrudServices.SetPropertyValues(dao24, _pluginId, SystemSettingConstants.Core_SmtpUserNamePassword, "SMTP User Name Password", "", "green");
+            dao25 = _systemSettingCrudServices.SetPropertyValues(dao25, _pluginId, SystemSettingConstants.Core_SmtpWriteAsFile, "SMTP Write as File", "", "", false);
+            dao26 = _systemSettingCrudServices.SetPropertyValues(dao26, _pluginId, SystemSettingConstants.Core_SmtpWriteAsFileLocation, "SMTP Write as File Location", "", "data\\smtp\\");
+            dao27 = _systemSettingCrudServices.SetPropertyValues(dao27, _pluginId, SystemSettingConstants.Core_SslIsEnabled, "SSL Is Enabled", "", "", false);
+            dao28 = _systemSettingCrudServices.SetPropertyValues(dao28, _pluginId, SystemSettingConstants.Core_SSLUrl, "SSL URL", "", "");
+            dao29 = _systemSettingCrudServices.SetPropertyValues(dao29, _pluginId, SystemSettingConstants.Core_SystemSettingIsActive, "System Setting Is Active", "", "", true);
+            dao30 = _systemSettingCrudServices.SetPropertyValues(dao30, _pluginId, SystemSettingConstants.Core_TimeZoneInfoId, "Default TimeZoneInfoId", "", "Eastern Standard Time");
+            dao31 = _systemSettingCrudServices.SetPropertyValues(dao31, _pluginId, SystemSettingConstants.Core_Us_ShippingIsAllowed, "USA - Is Shipping Allowed", "", "", true);
+            dao32 = _systemSettingCrudServices.SetPropertyValues(dao32, _pluginId, SystemSettingConstants.Core_US_Taxes_NJ_SalesTaxRate, "Default NJ Sales Tax Rate", "", "", false, 0.06M);
+            dao33 = _systemSettingCrudServices.SetPropertyValues(dao33, _pluginId, SystemSettingConstants.Core_US_Taxes_NY_SalesTaxRate, "Default NY Sales Tax Rate", "", "", false, 0.0825M);
+            dao34 = _systemSettingCrudServices.SetPropertyValues(dao34, _pluginId, SystemSettingConstants.Core_US_Taxes_PA_SalesTaxRate, "Default PA Sales Tax Rate", "", "", false, 0.06M);
+            dao35 = _systemSettingCrudServices.SetPropertyValues(dao35, _pluginId, SystemSettingConstants.Core_US_DefaultState, "USA - Default State Abbreviation", "", "NJ");
+            dao36 = _systemSettingCrudServices.SetPropertyValues(dao36, _pluginId, SystemSettingConstants.Core_US_Taxes_SalesTaxState, "USA - Default Sales Tax State", "", "NJ", false);
+            dao37 = _systemSettingCrudServices.SetPropertyValues(dao37, _pluginId, SystemSettingConstants.Core_US_Taxes_VatIsEnabled, "USA - VAT Is Enabled", "", "", false);
+            dao38 = _systemSettingCrudServices.SetPropertyValues(dao38, _pluginId, SystemSettingConstants.Core_UserName, "Default User Name", "", _userName);
 
             list.Add(dao1);
             list.Add(dao2);
@@ -273,6 +287,16 @@ namespace Dna.NetCore.Core.BLL.Initializers
             list.Add(dao26);
             list.Add(dao27);
             list.Add(dao28);
+            list.Add(dao29);
+            list.Add(dao30);
+            list.Add(dao31);
+            list.Add(dao32);
+            list.Add(dao33);
+            list.Add(dao34);
+            list.Add(dao35);
+            list.Add(dao36);
+            list.Add(dao37);
+            list.Add(dao38);
 
             return list;
         }

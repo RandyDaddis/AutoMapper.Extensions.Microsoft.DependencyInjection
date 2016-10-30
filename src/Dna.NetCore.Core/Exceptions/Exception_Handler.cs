@@ -114,7 +114,7 @@ namespace Dna.NetCore.Core.Exceptions
 
 #if NET462
 
-         TODO: .NET Core implementation
+        // TODO: .NET Core implementation
         ///// <summary>
         ///// 
         ///// // WARNING: System.Exception.TargetSite is implemented in mscorlib,
@@ -134,7 +134,8 @@ namespace Dna.NetCore.Core.Exceptions
 
         ///// <summary>
         /////// 
-        /////// // WARNING: System.Exception.TargetSite is not implemented in System.Runtime, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+        /////// // WARNING: System.Exception.TargetSite is implemented in mscorlib,
+        ///////               but it is not implemented in System.Runtime, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
         /////// //                                                            .nuget\packages\System.Runtime\4.1.0\ref\netstandard1.5\System.Runtime.dll
         ///////
         ///// returns the method name that caused the exception
@@ -144,7 +145,6 @@ namespace Dna.NetCore.Core.Exceptions
         public static string Get_TargetSite_MethodName(this Exception exception)
         {
             string name = exception.TargetSite.Name;
-
             return name;
         }
 
@@ -155,7 +155,7 @@ namespace Dna.NetCore.Core.Exceptions
         ///// <returns>member types:Constructor, Event, Field, Method, Property, TypeInfo, Custom, NestedType, All</returns>
         //public static string Get_TargetSite_MemberType(this Exception exception)
         //{
-            //string s = System.Enum.GetName(MemberTypes, exception.TargetSite.MemberType.GetType() as object);
+        //    string s = System.Enum.GetName(MemberTypes, exception.TargetSite.MemberType.GetType() as object);
         //    return s;
         //}
 #endif
